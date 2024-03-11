@@ -51,7 +51,7 @@ jobs:
       run: |
         mkdir docs
         Rscript ghgenerate.R
-        cp isc-proposal.html index.html
+        cp docs/isc-proposal.html docs/index.html
 
     # deploy needs rsync? Seems so.
     - name: Install deploy dependencies
