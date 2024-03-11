@@ -35,8 +35,8 @@ jobs:
       run: |
         options(timeout = max(1000, getOption("timeout")))
         options(repos = c(CRAN = "https://cran.r-project.org"))
-        install.packages(c("knitr", "rmarkdown", "remotes"))
-        saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+        install.packages(c("knitr", "rmarkdown"))
+        saveRDS(installed.packages()[,c(1,3)], ".github/depends.Rds", version = 2)
       shell: Rscript {0}
 
     - name: Cache R packages
