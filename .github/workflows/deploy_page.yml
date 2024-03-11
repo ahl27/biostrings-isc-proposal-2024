@@ -27,9 +27,8 @@ jobs:
     - name: Install dependencies with apt
       run: |
         apt-get update
-        apt-get install -y texlive-full
+        apt-get install -y texlive-latex-base texlive-fonts-extra git
 
-    # installing via `system` because calling in shell has been causing me issues
     - name: Install dependencies with CRAN
       run: |
         options(repos = c(CRAN = "https://cran.r-project.org"))
