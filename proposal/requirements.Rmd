@@ -44,3 +44,5 @@ I respectfully request \$8,000 to cover my labor cost associated with the 20% ef
 <!--
 A summary of the requirements that contextualises the costs
 -->
+
+The costs of this project are entirely labor hours. This project will take a substantial fraction of my workload to complete, and funding will support that effort. I expect the work done in the project to make future maintenance easier. In other words, the funding for this project will allow me to continue to maintain Biostrings in the future without further financial support.

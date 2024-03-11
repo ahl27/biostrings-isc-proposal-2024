@@ -24,6 +24,6 @@ Who has been given the opportunity to provide feedback on the proposal? This sho
 
 ### Signatories
 
-This section provides the ISC with a view of the support received from the community for a proposal. Acceptance isn't predicated on popularity but community acceptance is important.  Willingness to accept outside input is also a good marker for project delivery. 
+From the ISC: "This section provides the ISC with a view of the support received from the community for a proposal. Acceptance isn't predicated on popularity but community acceptance is important. Willingness to accept outside input is also a good marker for project delivery."
 
-If you are interested in signing on, feel free to email me (AHL27@pitt.edu) or [open an issue on GitHub](https://github.com/ahl27/biostrings-isc-proposal-2024/issues/new).
+If you are supportive of this project and interested in signing on, feel free to email me (AHL27@pitt.edu) or [open an issue on GitHub](https://github.com/ahl27/biostrings-isc-proposal-2024/issues/new).
