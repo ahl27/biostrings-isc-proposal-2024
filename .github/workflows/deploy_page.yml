@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         options(repos = c(CRAN = "https://cran.r-project.org"))
-        install.packages("knitr", "rmarkdown", "pandoc")
+        install.packages(c("knitr", "rmarkdown", "pandoc"))
       shell: Rscript {0}
 
     - name: Cache R packages
