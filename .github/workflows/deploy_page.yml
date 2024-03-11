@@ -27,8 +27,16 @@ jobs:
     - name: Install dependencies with apt
       run: |
         apt-get update
-        apt-get install -y texlive-latex-base texlive-fonts-extra git lmodern
+        apt-get install -y texlive-latex-base texlive-fonts-extra git lmodern xcolor
 
+    - name: Restore cached R packages
+      if: runner.os != 'Windows'
+      uses: actions/cache/restore@v4
+      with:
+        path: /usr/local/lib/R/site-library
+        key: ${{ env.cache-version }}-${{ runner.os }}-r-${{ hashFiles('.github/depends.Rds') }}
+        restore-keys: ${{ env.cache-version }}-${{ runner.os }}-r-
+        
     - name: Install dependencies with CRAN
       run: |
         options(repos = c(CRAN = "https://cran.r-project.org"))
@@ -36,8 +44,8 @@ jobs:
       shell: Rscript {0}
 
     - name: Cache R packages
-      if: runner.os != 'Windows'
-      uses: actions/cache@v1
+      if: runner.os != 'Windows
+      uses: actions/cache/save@v4
       with:
         path: /usr/local/lib/R/site-library
         key: ${{ env.cache-version }}-${{ runner.os }}-r-${{ hashFiles('.github/depends.Rds') }}
