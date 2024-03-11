@@ -6,6 +6,7 @@ on:
       - main
 env:
   cache-version: v1
+  GITHUB_PAT: ${{ secrets.GH_SECRET_TOKEN }}
 
 jobs:
   build:
@@ -13,7 +14,6 @@ jobs:
     container: r-base:latest
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
-      GITHUB_PAT: ${{ secrets.GH_SECRET_TOKEN }}
     steps:
     - name: Install pandoc
       uses: r-lib/actions/setup-pandoc@v2
@@ -56,6 +56,6 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
-        token: GITHUB_PAT
+        token: $GITHUB_PAT
         branch: gh-pages # The branch the action should deploy to.
         folder: docs # The folder the action should deploy.
