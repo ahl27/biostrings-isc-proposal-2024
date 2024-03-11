@@ -21,9 +21,8 @@ jobs:
       with:
         persist-credentials: false
     
-    - name: Install dependencies with `apt`
-      run: |
-        apt-get install -y pandoc
+    - name: Install pandoc
+      uses: r-lib/actions/setup-pandoc@v2
     
     - name: Install dependencies with CRAN
       run: |
