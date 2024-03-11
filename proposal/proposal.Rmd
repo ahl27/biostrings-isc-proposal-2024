@@ -1,9 +1,9 @@
-# The proposal
+# The Proposal
 <!--
 This is where the proposal should be outlined. 
 -->
 
-## Overview
+### Overview
 <!--
 At a high-level address what your proposal is and how it will address the problem identified. Highlight any benefits to the R Community that follow from solving the problem. This should be your most compelling section.
 -->
@@ -12,7 +12,7 @@ Biostrings is a core Bioconductor package providing efficient containers for sto
 
 In summary, this proposal details a new era for Biostrings. The project will transition maintenance to a new developer, and in the process, ensure the package is robust and maintainable for years to come.
 
-## Detail
+### Detail
 <!--
 Go into more detail about the specifics of the project and it delivers against the problem.
 
@@ -25,7 +25,7 @@ Depending on project type the detail section should include:
 
 There are three categories of changes needed to sustain the utility of Biostrings in the long-term. First, outstanding user-contributed GitHub issues must be addressed. Most of these are straightforward but require effort to complete. I anticipate up to 4 months for this first Aim. Second, current and past Biostrings developers have kept a list of to do items for the package. Prior to this proposal submission, I worked with Hervé Pagès to narrow this list to the items that are the most important items for Biostrings' long-term success. I anticipate up to 6 months will be required to complete all items on this list. Third, modern DNA sequencing technologies have advanced markedly since Biostrings was first introduced. Changes to import and export of sequences are needed to sustain the project long-term. I expect these changes will take 2 months. These three categories of changes are described in the three Aims below.
 
-### Aim 1: Package cleanup and hardening
+#### Aim 1: Package cleanup and hardening
 
 The goal of this aim is the prepare the Biostrings codebase for future improvements and facilitate ongoing maintenance. Biostrings has had minimal maintenance for the past 5 years, and as a result lacks many processes that ease continued development. The goals of the Aim are the following:
 
@@ -35,11 +35,11 @@ The goal of this aim is the prepare the Biostrings codebase for future improveme
 
 Successful completion of this Aim will result in a cleaner Biostrings GitHub repository, resolution of outstanding user-submitted bugs, and a robust testing pipeline for future submissions. I expect this Aim to take three months; most of the GitHub issues are relatively quick to fix, so the majority of the time will be dedicated to building a robust testing infrastructure.
 
-### Aim 2: Completing critical items on the Biostrings developers' TODO list
+#### Aim 2: Completing critical items on the Biostrings developers' TODO list
 
 This will focus on items related to XStringSets in the TODO file. More detail to come.
 
-### Aim 3: Enhancing input/output for modern sequencing technologies
+#### Aim 3: Enhancing input/output for modern sequencing technologies
 
 Biostrings was initially developed during a time when sequencing produced megabases (~1M nucleotides) of data per run. Modern sequencing technologies easily produce gigabases (> 1B nucleotides) per run. Hence, Biostrings' input/output needs improvement to scale alongside next generation sequencing technologies. At present, Biostrings can only read and write sequences from gzip compressed files. There is an `open_input_files` function that allows reading sequences in batches, but it does not use the standard R connections interface and is cumbersomely slow on large compressed files.
 

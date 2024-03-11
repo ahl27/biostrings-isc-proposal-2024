@@ -6,7 +6,7 @@ Since the package is hosted on Bioconductor, large milestones are already clearl
 
 ![Figure 2. Timeline of aims and milestones(M) throughout the project.](data/Timeline.png)
 
-## Start-up phase
+### Start-up phase
 <!--
 Covering the planning phase, this section should provide a relatively detailed plan of how work will start on the project. This section is important because projects need to get up and running quickly.
 
@@ -19,7 +19,7 @@ Covering the planning phase, this section should provide a relatively detailed p
 This project has a short start-up phase. I have already coordinated with Hervé Pagès to identify critical tasks for each of the Aims (see "Proposal"). The codebase and dissemination method have already been created (GitHub and Bioconductor, respectively), and I have acquired write access to the codebase from Hervé Pagès. Additionally, I have experience contributing to Biostrings in the past, so I am relatively familiar with the codebase and contribution pipeline. As a result, I would be ready to begin work on Aim 1 from the moment the grant is awarded.
 
 
-## Technical delivery
+### Technical delivery
 <!--
 Covering the actual delivery of the project this section should provide at least a high-level the implementation. 
 
@@ -34,7 +34,7 @@ Aim 2: Finished by April 2025, in time for Bioconductor release 3.21.
 
 Aim 3: Finished by June 2025 and merged into Bioconductor version 3.22 (development). Present on improvements at conferences, finalize changes in time for Bioconductor release 3.22 in October 2025.
 
-## Other aspects
+### Other aspects
 <!--
 Covering non-technical activities like on-going publicity, paper preparation, discussion groups etc. that might be required to facilitate successful delivery of the project.
 

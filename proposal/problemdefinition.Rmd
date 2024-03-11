@@ -13,7 +13,7 @@ Biostrings is an essential package in the R ecosystem, with over 1 million insta
 
 As an active Biostrings user and contributor, I have discussed this issue extensively with the package maintainer, Hervé Pagès (see attached Letter of Support). In collaboration, we have drawn a roadmap to sustainable long-term maintenance of the Biostrings package. Here, we present a path forward and request funding support for the labor required to implement it. In this vision, I will take over primary maintenance of the Biostrings package and implement a set of fixes and extensions that put Biostrings on a path toward sustained success.
 
-```{r, echo=FALSE, fig.fullwidth=TRUE, fig.cap="Yearly Biostrings Installations by total and unique IP address."}
+```{r, echo=FALSE, fig.fullwidth=TRUE, fig.align='center', fig.cap="Figure 1. Yearly Biostrings Installations by total and unique IP address."}
 par(mgp=c(2.5,0.5,0))
 d <- read.table("../data/Biostrings_Downloads_v1.csv", sep=',', row.names=1L, header=TRUE)
 plot(NULL, main="Annual Biostrings Installations", yaxs='i', xaxs='i',

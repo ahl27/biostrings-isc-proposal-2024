@@ -1,27 +1,27 @@
-# Signatories
-<!-- 
-This section provides the ISC with a view of the support received from the community for a proposal. Acceptance isn't predicated on popularity but community acceptance is important.  Willingness to accept outside input is also a good marker for project delivery. 
-
-An optional section would be for R-Core signatories where changes to R are proposed.
--->
-
-## Project team
+### Project team
 <!-- 
 Who are the people responsible for actually delivering the project if the proposal gets accepted and are already signed up and rearing to go?
 -->
 
-Aidan Lakshman - PhD Candidate, University of Pittsburgh. See `requirements.Rmd` for more detail.
+Aidan Lakshman - PhD Candidate, University of Pittsburgh. More information is available below in the "People" section.
 
-## Contributors
+### Contributors
 <!-- 
 Who are the people who have actively helped with this proposal but won't necessarily be on the core project team later?
 -->
 
 Erik S. Wright - Associate Professor, University of Pittsburgh
+
 Hervé Pagès - Bioconductor Core Team, Biostrings Maintainer
 
-## Consulted
+<!--
+### Consulted
 <!-- 
 Who has been given the opportunity to provide feedback on the proposal? This should include any R Consortium & ISC members who the proposal has been discussed with.
 -->
 
+### Signatories
+
+This section provides the ISC with a view of the support received from the community for a proposal. Acceptance isn't predicated on popularity but community acceptance is important.  Willingness to accept outside input is also a good marker for project delivery. 
+
+If you are interested in signing on, feel free to email me (AHL27@pitt.edu) or [open an issue on GitHub](https://github.com/ahl27/biostrings-isc-proposal-2024/issues/new).
