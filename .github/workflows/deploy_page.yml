@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+  cache-version: v1
 
 jobs:
   build:
@@ -22,8 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         options(repos = c(CRAN = "https://cran.r-project.org"))
-        install.packages("knitr")
-        install.packages("rmarkdown")
+        install.packages("knitr", "rmarkdown", "pandoc")
       shell: Rscript {0}
 
     - name: Cache R packages
