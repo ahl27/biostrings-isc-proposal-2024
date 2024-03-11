@@ -15,7 +15,7 @@ As an active Biostrings user and contributor, I have discussed this issue extens
 
 ```{r, echo=FALSE, fig.fullwidth=TRUE, fig.cap="Yearly Biostrings Installations by total and unique IP address."}
 par(mgp=c(2.5,0.5,0))
-d <- read.table("data/Biostrings_Downloads_v1.csv", sep=',', row.names=1L, header=TRUE)
+d <- read.table("../data/Biostrings_Downloads_v1.csv", sep=',', row.names=1L, header=TRUE)
 plot(NULL, main="Annual Biostrings Installations", yaxs='i', xaxs='i',
      xaxt='n', yaxt='n', xlab="Year", ylab='Number of Installations (Millions)',
      xlim=c(min(d$Year)-0.5, max(d$Year)+0.5), ylim=c(0, 1.5e6))
