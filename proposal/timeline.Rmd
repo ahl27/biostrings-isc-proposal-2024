@@ -4,7 +4,7 @@ I plan to complete the proposed work in a one-year time period. As funding comme
 
 Since the package is hosted on Bioconductor, large milestones are already clearly defined. Bioconductor releases new versions in October and April, which will each act as milestones for delivery of the first two Aims. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
 
-![Figure 2. Timeline of aims and milestones(M) throughout the project.](../data/Timeline.png)
+![Figure 2. Timeline of aims and milestones(M) throughout the project.](data/Timeline.png)
 
 ## Start-up phase
 <!--
