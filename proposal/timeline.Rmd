@@ -1,5 +1,11 @@
 # Project plan
 
+I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposal is June 1, 2024 - June 1, 2025. A summary of the timeline of aims is included below, and a detailed description follows.
+
+Since the package is hosted on Bioconductor, large milestones are already clearly defined. Bioconductor releases new versions in October and April, which will each act as milestones for delivery of the first two Aims. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
+
+![Figure 2. Timeline of aims and milestones(M) throughout the project.](../data/Timeline.png)
+
 ## Start-up phase
 <!--
 Covering the planning phase, this section should provide a relatively detailed plan of how work will start on the project. This section is important because projects need to get up and running quickly.
@@ -10,6 +16,8 @@ Covering the planning phase, this section should provide a relatively detailed p
  - [ ] Reporting framework
 -->
 
+This project has a short start-up phase. I have already coordinated with Hervé Pagès to identify critical tasks for each of the Aims (see "Proposal"). The codebase and dissemination method have already been created (GitHub and Bioconductor, respectively), and I have acquired write access to the codebase from Hervé Pagès. Additionally, I have experience contributing to Biostrings in the past, so I am relatively familiar with the codebase and contribution pipeline. As a result, I would be ready to begin work on Aim 1 from the moment the grant is awarded.
+
 
 ## Technical delivery
 <!--
@@ -17,6 +25,14 @@ Covering the actual delivery of the project this section should provide at least
 
 Including target dates is really important as you need to be committed and the ISC need to have a means of tracking delivery
 -->
+
+More detail to come.
+
+Aim 1: Finished by October 2024, in time for Bioconductor release 3.20.
+
+Aim 2: Finished by April 2025, in time for Bioconductor release 3.21.
+
+Aim 3: Finished by June 2025 and merged into Bioconductor version 3.22 (development). Present on improvements at conferences, finalize changes in time for Bioconductor release 3.22 in October 2025.
 
 ## Other aspects
 <!--
@@ -28,3 +44,11 @@ Covering non-technical activities like on-going publicity, paper preparation, di
  - [ ] UseR!
  - [ ] ISC meetings
 -->
+
+This project will be highlighted through a variety of methods.
+
+Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to host at R-bloggers.com).
+
+As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. I will apply to present the work done in this proposal at both of these conferences. This will also provide a good opporunity to highlight the ISC's contribution to this project.
+
+Finally, I plan to submit a paper on the updated Biostrings to the R Journal. As Biostrings is a critical package in the R ecosystem, an updated paper would be of interested to the readership of the R Journal. I plan to write this paper in conjunction with Erik Wright and Hervé Pagès, and submit in mid-2025.

@@ -10,10 +10,15 @@ An optional section would be for R-Core signatories where changes to R are propo
 Who are the people responsible for actually delivering the project if the proposal gets accepted and are already signed up and rearing to go?
 -->
 
+Aidan Lakshman - PhD Candidate, University of Pittsburgh. See `requirements.Rmd` for more detail.
+
 ## Contributors
 <!-- 
 Who are the people who have actively helped with this proposal but won't necessarily be on the core project team later?
 -->
+
+Erik S. Wright - Associate Professor, University of Pittsburgh
+Hervé Pagès - Bioconductor Core Team, Biostrings Maintainer
 
 ## Consulted
 <!-- 

@@ -8,6 +8,10 @@ This is where the proposal should be outlined.
 At a high-level address what your proposal is and how it will address the problem identified. Highlight any benefits to the R Community that follow from solving the problem. This should be your most compelling section.
 -->
 
+Biostrings is a core Bioconductor package providing efficient containers for storing, manipulating, and analyzing biological sequences. Biostrings enables access to XString objects that are an essential part of the Bioconductor ecosystem. Presently, Biostrings maintenance is hindered by (i) a list of open issues on GitHub, (ii) a to do list of items developed by package contributors, and (iii) input/output functionality that is becoming outdated with newer technology. In this proposed project, I will address open issues, harden the Biostrings package for long-term sustainability, and add features that will keep Biostrings relevant for modern sequencing technologies. For end-users, this will result in numerous bugfixes, a host of new features to support genomic analyses, and a variety of performance improvements to bolster R as one of the top programming languages for bioinformatics.
+
+In summary, this proposal details a new era for Biostrings. The project will transition maintenance to a new developer, and in the process, ensure the package is robust and maintainable for years to come.
+
 ## Detail
 <!--
 Go into more detail about the specifics of the project and it delivers against the problem.
@@ -18,3 +22,27 @@ Depending on project type the detail section should include:
  - [ ] Architecture
  - [ ] Assumptions
 -->
+
+There are three categories of changes needed to sustain the utility of Biostrings in the long-term. First, outstanding user-contributed GitHub issues must be addressed. Most of these are straightforward but require effort to complete. I anticipate up to 4 months for this first Aim. Second, current and past Biostrings developers have kept a list of to do items for the package. Prior to this proposal submission, I worked with Hervé Pagès to narrow this list to the items that are the most important items for Biostrings' long-term success. I anticipate up to 6 months will be required to complete all items on this list. Third, modern DNA sequencing technologies have advanced markedly since Biostrings was first introduced. Changes to import and export of sequences are needed to sustain the project long-term. I expect these changes will take 2 months. These three categories of changes are described in the three Aims below.
+
+### Aim 1: Package cleanup and hardening
+
+The goal of this aim is the prepare the Biostrings codebase for future improvements and facilitate ongoing maintenance. Biostrings has had minimal maintenance for the past 5 years, and as a result lacks many processes that ease continued development. The goals of the Aim are the following:
+
+1. Clean up outdated documentation and bug reports. Many internal documentation files and scripts have `TODO` tags or warnings that are out of date. Additionally, many bug reports on GitHub have been resolved but remain open. This makes ongoing maintenance challenging, as it requires additional developer effort to determine if a bug still exists before addressing it. This task will clean up the codebase, update outdated documentation, and clean up resolved bug reports.
+2. Implement unit testing. Much of this project depends on improving and adding additional functionality to Biostrings. However, as mentioned in the Problem Definition section, Biostrings is a critical package with over a million downloads per year. As such, robust unit testing is essential to ensure that other proposed changes do not break existing functionality for end users. Robust testing suites would also make it easier for maintainers to review community-contributed code, thus making it easier to involve the community in Biostrings.
+3. Resolving outstanding bug reports. While many bug reports on GitHub are resolved, there are many that remain unaddressed. This task will resolve any remaining bug reports. Part of this task will involve reaching out to bug reporters for additional detail, as some bug reports are years old without any updates (see [here](https://github.com/Bioconductor/Biostrings/issues/14) or [here](https://github.com/Bioconductor/Biostrings/issues/25) examples of very old bug reports).
+
+Successful completion of this Aim will result in a cleaner Biostrings GitHub repository, resolution of outstanding user-submitted bugs, and a robust testing pipeline for future submissions. I expect this Aim to take three months; most of the GitHub issues are relatively quick to fix, so the majority of the time will be dedicated to building a robust testing infrastructure.
+
+### Aim 2: Completing critical items on the Biostrings developers' TODO list
+
+This will focus on items related to XStringSets in the TODO file. More detail to come.
+
+### Aim 3: Enhancing input/output for modern sequencing technologies
+
+Biostrings was initially developed during a time when sequencing produced megabases (~1M nucleotides) of data per run. Modern sequencing technologies easily produce gigabases (> 1B nucleotides) per run. Hence, Biostrings' input/output needs improvement to scale alongside next generation sequencing technologies. At present, Biostrings can only read and write sequences from gzip compressed files. There is an `open_input_files` function that allows reading sequences in batches, but it does not use the standard R connections interface and is cumbersomely slow on large compressed files.
+
+To enhance Biostrings, I will add functionality for reading from standard gzip, bzip2, and xz connections in R. This will involve overhauling the `readXStringSet` functions within Biostrings. Furthermore, I will enable writing to alternative output file compression types (bzip2 and xz), while allowing for different compression levels. At present there is a `compression_level` argument in `writeXStringSet`, but it is unused by the function. I will focus on improving the speed of reading and writing from files so that large file sizes are no longer problematically slow. Collectively, these enhancements will propel Biostrings (and by extension, the R programming language itself) into the future of big biological data.
+
+

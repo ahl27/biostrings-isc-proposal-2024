@@ -3,10 +3,18 @@
 An idea of what is required to make the project actually happen
 -->
 
+The primary requirement for making this project happen is a developer with the time and willingness to maintain Biostrings, and the technical ability to make that happen. A secondary requirement is funding to support the developer during their work on this package.
+
 ## People
 <!--
 Who needs to be involved, what's the proposed structure, what will it take to get their involvement?
 -->
+
+I (Aidan Lakshman) will be the primary developer on this project. I am a PhD student in the Department of Biomedical Informatics at the University of Pittsburgh. In my work, I am a developer of the [SynExtend package](https://bioconductor.org/packages/release/bioc/html/SynExtend.html) that is dependent upon Biostrings. I have already made several major contributions to R (e.g., [dendrapply](https://bugs.r-project.org/show_bug.cgi?id=18480), [wilcox](https://bugs.r-project.org/show_bug.cgi?id=18655)) and Biostrings (e.g., [AAStrings](https://github.com/Bioconductor/Biostrings/pull/97)), and I developed a strong working relationship with the current Biostrings maintainer, Hervé Pagès, in the process. If funded, I will conduct this project during the last year of my PhD, and then the package will be in a state where I can continue to support it longer-term in conjunction with others in the Bioconductor community.
+
+Auxiliary supporters of this proposal are my PhD advisor, Erik Wright, and current Biostrings maintainer Hervé Pagès. Erik Wright is a past contributor to Biostrings, and is supportive of me committing 20% of my work hours to this project. Both Erik Wright and Hervé Pagès will provide advising throughout the project to ensure contributed code is high quality and to prepare me to become a long-term maintainer of Biostrings. Their primary contribution will take the form of code reviews and suggestions for additional improvements. 
+
+I have already met with both Erik Wright and Hervé Pagès to develop the structure of this proposal--letters of support from both are included.
 
 ## Processes
 <!-- 
@@ -22,11 +30,15 @@ Will cloud computing be used - if yes are there are necessary components that wi
 Are there tools or tech that don't exist that will be produced to facilitate the project?
 -->
 
+No specific tools or technology are needed to deliver this project. The Biostrings codebase is hosted [on GitHub](https://github.com/Bioconductor/Biostrings) and is released regularly on Bioconductor. All software development can be done on my personal computer.
+
 ## Funding
 <!-- 
 [TO DO] THE GUIDANCE IS PRETTY UNCLEAR, ESP IN LIGHT OF GABOR'S PROPOSAL VS AWARD SIZE
 
 -->
+
+I respectfully request \$8,000 to cover my labor cost associated with the 20% effort for 1 year needed to complete this project. This amount is based on my current \$40,000 per year stipend as a graduate student at the University of Pittsburgh.
 
 ## Summary
 <!--
