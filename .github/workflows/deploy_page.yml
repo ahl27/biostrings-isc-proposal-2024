@@ -28,6 +28,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: /usr/local/lib/R/site-library
+        key: ${{ env.cache-version }}-${{ runner.os }}-r-
         restore-keys: ${{ env.cache-version }}-${{ runner.os }}-r-
         
     - name: Install dependencies with CRAN
