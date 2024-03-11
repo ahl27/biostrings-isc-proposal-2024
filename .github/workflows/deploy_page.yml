@@ -33,8 +33,9 @@ jobs:
         
     - name: Install dependencies with CRAN
       run: |
+        options(timeout = max(1000, getOption("timeout")))
         options(repos = c(CRAN = "https://cran.r-project.org"))
-        install.packages(c("knitr", "rmarkdown", "remotes"), quiet=TRUE)
+        install.packages(c("knitr", "rmarkdown", "remotes"))
         saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
       shell: Rscript {0}
 
