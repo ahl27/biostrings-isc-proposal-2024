@@ -37,7 +37,32 @@ Successful completion of this Aim will result in a cleaner Biostrings GitHub rep
 
 #### Aim 2: Completing critical items on the Biostrings developers' TODO list
 
-This will focus on items related to XStringSets in the TODO file. More detail to come.
+This will focus on implementing TODO items identified by Biostrings developers. As this list is relatively long, Aim 2 will focus specifically on tasks relating to `XString` objects, Biostrings' foundational data structure. `XString` is a virtual class inherited by all the sequence storage containers in Biostrings (`DNAString` for DNA, `RNAString` for RNA, `AAString` for amino acids, and `BString` for general sequences). These tasks also relate to `XStringSet` objects (sets of multiple `XString` objects, such as a sequence alignment) and `XStringViews` objects (multiple subsequences of the same `XString` object).
+
+This subset of tasks was chosen for the following reasons:
+
+1. `XString` objects are the most widely used facet of Biostrings, so improvements to them will benefit the greatest number of users
+2. Working on `XString` objects will give me greater familiarity with these structures, providing a good foundational set up for Aim 3.
+3. The tasks relating to `XString` objects are well defined and not overly complex, meaning there is a low risk of them taking longer than expected.
+
+The changes proposed fall into two general categories: Container changes and Utility changes.
+
+- Container changes are changes to the data structures themselves and their internal operations:
+  - Refactor `XStringSet` to replace elements without reallocation and data copy
+  - Support substrings of `XStringSet` objects when the set has length 1
+  - Fix `validObject()` for `XStringSet` objects
+  - Ensure `DNAStringSet(x)` does nothing when `x` already a `DNAStringSet`
+  - Add methods for `XStringSet` objects to match `XStringViews` objects (e.g., `matchPattern`)
+  - Speed up `show` method for `XStringSet` objects
+- Utility changes are changes to user-facing functions to improve interacting with `XString` objects:
+  - Improve the efficiency of `XStringSet` set operations (`union`, `intersect`, `setdiff`, `setequal`)
+  - Add `order`, `sort`, `duplicated`, `unique`, and `patternFrequency` methods for `XStringSet` and `XStringViews` objects
+  - Add comparison functions (`==`, `<`, `>`, `<=`, `>=`) for `XString` objects
+  - Add `xsmatch()` function for a `base::match()` implementation for `XString` objects
+
+This is the longest Aim, and is expected to take approximately six months. While there are a lot of tasks in this Aim, many of these functions are minor extensions of existing functionality and thus should not take extremely long.
+
+See "Future Work" for discussion on the other tasks.
 
 #### Aim 3: Enhancing input/output for modern sequencing technologies
 
