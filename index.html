@@ -523,8 +523,69 @@ testing infrastructure.</p>
 <div id="aim-2-completing-critical-items-on-the-biostrings-developers-todo-list" class="section level4">
 <h4>Aim 2: Completing critical items on the Biostrings developers’ TODO
 list</h4>
-<p>This will focus on items related to XStringSets in the TODO file.
-More detail to come.</p>
+<p>This will focus on implementing TODO items identified by Biostrings
+developers. As this list is relatively long, Aim 2 will focus
+specifically on tasks relating to <code>XString</code> objects,
+Biostrings’ foundational data structure. <code>XString</code> is a
+virtual class inherited by all the sequence storage containers in
+Biostrings (<code>DNAString</code> for DNA, <code>RNAString</code> for
+RNA, <code>AAString</code> for amino acids, and <code>BString</code> for
+general sequences). These tasks also relate to <code>XStringSet</code>
+objects (sets of multiple <code>XString</code> objects, such as a
+sequence alignment) and <code>XStringViews</code> objects (multiple
+subsequences of the same <code>XString</code> object).</p>
+<p>This subset of tasks was chosen for the following reasons:</p>
+<ol style="list-style-type: decimal">
+<li><code>XString</code> objects are the most widely used facet of
+Biostrings, so improvements to them will benefit the greatest number of
+users</li>
+<li>Working on <code>XString</code> objects will give me greater
+familiarity with these structures, providing a good foundational set up
+for Aim 3.</li>
+<li>The tasks relating to <code>XString</code> objects are well defined
+and not overly complex, meaning there is a low risk of them taking
+longer than expected.</li>
+</ol>
+<p>The changes proposed fall into two general categories: Container
+changes and Utility changes.</p>
+<ul>
+<li>Container changes are changes to the data structures themselves and
+their internal operations:
+<ul>
+<li>Refactor <code>XStringSet</code> to replace elements without
+reallocation and data copy</li>
+<li>Support substrings of <code>XStringSet</code> objects when the set
+has length 1</li>
+<li>Fix <code>validObject()</code> for <code>XStringSet</code>
+objects</li>
+<li>Ensure <code>DNAStringSet(x)</code> does nothing when <code>x</code>
+already a <code>DNAStringSet</code></li>
+<li>Add methods for <code>XStringSet</code> objects to match
+<code>XStringViews</code> objects (e.g., <code>matchPattern</code>)</li>
+<li>Speed up <code>show</code> method for <code>XStringSet</code>
+objects</li>
+</ul></li>
+<li>Utility changes are changes to user-facing functions to improve
+interacting with <code>XString</code> objects:
+<ul>
+<li>Improve the efficiency of <code>XStringSet</code> set operations
+(<code>union</code>, <code>intersect</code>, <code>setdiff</code>,
+<code>setequal</code>)</li>
+<li>Add <code>order</code>, <code>sort</code>, <code>duplicated</code>,
+<code>unique</code>, and <code>patternFrequency</code> methods for
+<code>XStringSet</code> and <code>XStringViews</code> objects</li>
+<li>Add comparison functions (<code>==</code>, <code>&lt;</code>,
+<code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>) for
+<code>XString</code> objects</li>
+<li>Add <code>xsmatch()</code> function for a <code>base::match()</code>
+implementation for <code>XString</code> objects</li>
+</ul></li>
+</ul>
+<p>This is the longest Aim, and is expected to take approximately six
+months. While there are a lot of tasks in this Aim, many of these
+functions are minor extensions of existing functionality and thus should
+not take extremely long.</p>
+<p>See “Future Work” for discussion on the other tasks.</p>
 </div>
 <div id="aim-3-enhancing-inputoutput-for-modern-sequencing-technologies" class="section level4">
 <h4>Aim 3: Enhancing input/output for modern sequencing
@@ -599,7 +660,7 @@ Covering the actual delivery of the project this section should provide at least
 
 Including target dates is really important as you need to be committed and the ISC need to have a means of tracking delivery
 -->
-<p>More detail to come.</p>
+<p>Aims will be completed on the following schedule:</p>
 <p>Aim 1: Finished by October 2024, in time for Bioconductor release
 3.20.</p>
 <p>Aim 2: Finished by April 2025, in time for Bioconductor release
@@ -607,6 +668,30 @@ Including target dates is really important as you need to be committed and the I
 <p>Aim 3: Finished by June 2025 and merged into Bioconductor version
 3.22 (development). Present on improvements at conferences, finalize
 changes in time for Bioconductor release 3.22 in October 2025.</p>
+<p>Specific deliverables are as follows:</p>
+<ul>
+<li>June 30: Biostrings GitHub issue tracker cleaned up. All open issues
+will be verified unresolved bugs.</li>
+<li>Aug. 31: Testing framework for Biostrings implented, test suites
+included in <code>tests</code> folder in codebase.</li>
+<li>Sept. 31: Open bugs from Biostrings GitHub resolved.</li>
+<li>Oct. 15: Aim 1 complete; Biostrings release for Bioconductor v3.20
+finalized.</li>
+<li>Dec. 31: Container-related tasks for <code>XString</code> objects
+completed.</li>
+<li>Mar. 31: Utility-related tasks for <code>XString</code> objects
+completed. Aim 2 complete.</li>
+<li>Apr. 15: Biostrings release for Bioconductor v3.21 finalized.</li>
+<li>May 10: Optimized <code>readXStringSet</code> function
+completed.</li>
+<li>June 1: Support for compression levels and other compression formats
+for <code>writeXStringSet</code> implemented. Aim 3 Complete. Codebase
+available in Bioconductor devel branch (v3.22)</li>
+<li>July: Present at Bioc2025 and useR! 2025.</li>
+<li>August: Submit updated Biostrings manuscript to R Journal.</li>
+<li>October 2025: Code finalized in Bioconductor release version
+3.22.</li>
+</ul>
 </div>
 <div id="other-aspects" class="section level3">
 <h3>Other aspects</h3>
@@ -737,6 +822,28 @@ How will we know when success is achieved, what markers can we use along the way
 <!-- 
 How could this be extended / developed in the future by yourself and/or the community in general?
 -->
+<p>I plan to continue maintenance of this project into the future. This
+funding will provide support for me to gain an intricate knowledge of
+the codebase and create a testing infrastructure, allowing future
+maintenance to be much faster and less of a development burden.</p>
+<p>Future work falls into two categories:</p>
+<ol style="list-style-type: decimal">
+<li>Continued Maintenance. This is the expected burden of maintaining
+the package: dealing with bug reports, responding to users on GitHub and
+Bioconductor, and keeping the package updated for each subsequent
+Bioconductor and R version release.</li>
+<li>Feature enhancements. This includes adding additional enhancements
+or features. A key example of this is the long list of items related to
+<code>PDict</code> objects in the Biostrings develop TODO file–these are
+valuable features that would help analyses by end users, but that are
+too time-intensive to fit into this grant.</li>
+</ol>
+<p>It’s important to emphasize that future work will target community
+involvement. Once the initial work of cleaning up the package and
+implementing solid testing is done, allowing and encouraging
+contribution will be much easier. A focus of the planned conference
+talks at useR! and BioC2025 will be trying to get more community members
+involved in contributing code to Biostrings.</p>
 </div>
 <div id="key-risks" class="section level3">
 <h3>Key risks</h3>
