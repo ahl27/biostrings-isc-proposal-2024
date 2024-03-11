@@ -5,10 +5,10 @@ mkdir out;
 
 GH_REPO="@github.com/$TRAVIS_REPO_SLUG.git"
 
-FULL_REPO="https://$GH_TOKEN$GH_REPO"
+FULL_REPO="https://$GH_SECRET_TOKEN$GH_REPO"
 
-git config --global user.name "stephs-travis"
-git config --global user.email "steph@travis.ci"
+git config --global user.name "ahl27"
+git config --global user.email "ahl27@pitt.edu"
 
 R CMD BATCH 'ghgenerate.R'
 cp ghgenerate.Rout out
