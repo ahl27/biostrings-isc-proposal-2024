@@ -1,6 +1,6 @@
-proposal<-"Boilerplate ISC Proposal"
+proposal<-"Biostrings ISC Proposal 2024"
 proposal.file<-"isc-proposal.Rmd"
-author<-"Steph Locke"
+author<-"Aidan Lakshman"
 
 rmarkdown::render(proposal.file, output_format="html_document",
                   output_dir="out", quiet=TRUE)
