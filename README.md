@@ -11,7 +11,7 @@ However, maintenance on the package has dwindled over the past decade. The origi
 
 ## Proposal
 
-Myself and my doctoral advisor, Dr. Erik Wright, have worked with Hervé to clarify the needs of Biostrings in the long term. As a previous Biostrings contributor, I am familiar with the codebase and capable of maintaining it long term. My qualifications are described in greater detail in the proposal itself (see "Requirements"). In this proposal, I will work with Hervé to resolve outstanding bugs, add additional functionality, and become a long-term maintainer of Biostrings. This would allow Biostrings to continue functioning as one of the most valuable package for bioinformatics analyses.
+Myself and my doctoral advisor, Dr. Erik Wright, have worked with Hervé to clarify the needs of Biostrings in the long term. As a previous Biostrings contributor, I am familiar with the codebase and capable of maintaining it long term. My qualifications are described in greater detail in the proposal itself (see "Requirements"). In this proposal, I will work with Hervé to resolve outstanding bugs, add additional functionality, and become a long-term maintainer of Biostrings. This will allow Biostrings to continue functioning as one of the most valuable package for bioinformatics analyses.
 
 ## Proposed Tasks
 
