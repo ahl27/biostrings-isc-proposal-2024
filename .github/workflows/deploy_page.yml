@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies with apt
       run: |
         apt-get update
-        apt-get install -y texlive-latex-base texlive-fontsrecommended
+        apt-get install -y texlive-full
 
     # installing via `system` because calling in shell has been causing me issues
     - name: Install dependencies with CRAN
