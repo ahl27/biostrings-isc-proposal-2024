@@ -1,0 +1,52 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: r-base:latest
+    R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+    GITHUB_PAT: ${{ secrets.GH_SECRET_TOKEN }}
+  
+  steps:
+    - name: checkout
+      uses: actions/checkout@master
+      with:
+        persist-credentials: false
+    
+     - name: Install dependencies
+        run: |
+          options(repos = c(CRAN = "https://cran.r-project.org"))
+          install.packages("knitr")
+          install.packages("rmarkdown")
+        shell: Rscript {0}
+
+    - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v1
+        with:
+          path: /usr/local/lib/R/site-library
+          key: ${{ env.cache-version }}-${{ runner.os }}-r-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-r-
+
+    - name: build
+      run: |
+        mkdir docs
+        Rscript ghgenerate.R
+
+    # deploy needs rsync? Seems so.
+    - name: Install deploy dependencies
+      run: |
+        apt-get update
+        apt-get -y install rsync
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v4
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: docs # The folder the action should deploy.
