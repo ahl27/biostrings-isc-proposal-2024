@@ -23,7 +23,7 @@ jobs:
     
     - name: Install dependencies with `apt`
       run: |
-        apt install -y pandoc
+        sudo apt-get install -y pandoc
     
     - name: Install dependencies with CRAN
       run: |
