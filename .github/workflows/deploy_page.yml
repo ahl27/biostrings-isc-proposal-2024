@@ -21,10 +21,14 @@ jobs:
       with:
         persist-credentials: false
     
-    - name: Install dependencies
+    - name: Install dependencies with `apt`
+      run: |
+        apt install -y pandoc
+    
+    - name: Install dependencies with CRAN
       run: |
         options(repos = c(CRAN = "https://cran.r-project.org"))
-        install.packages(c("knitr", "rmarkdown", "pandoc"))
+        install.packages(c("knitr", "rmarkdown"), quiet=TRUE)
       shell: Rscript {0}
 
     - name: Cache R packages
