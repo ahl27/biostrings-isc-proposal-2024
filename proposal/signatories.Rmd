@@ -1,4 +1,4 @@
-### Project team
+### Project Team
 <!-- 
 Who are the people responsible for actually delivering the project if the proposal gets accepted and are already signed up and rearing to go?
 -->
@@ -13,6 +13,8 @@ Who are the people who have actively helped with this proposal but won't necessa
 Erik S. Wright - Associate Professor, University of Pittsburgh
 
 Hervé Pagès - Bioconductor Core Team, Biostrings Maintainer
+
+Letters of support will be added shortly.
 
 <!--
 ### Consulted

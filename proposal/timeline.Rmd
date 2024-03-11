@@ -1,4 +1,4 @@
-# Project plan
+# Project Plan
 
 I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposal is June 1, 2024 - June 1, 2025. A summary of the timeline of aims is included below, and a detailed description follows.
 
@@ -6,7 +6,7 @@ Since the package is hosted on Bioconductor, large milestones are already clearl
 
 ![Figure 2. Timeline of aims and milestones(M) throughout the project.](data/Timeline.png)
 
-### Start-up phase
+### Start-Up Phase
 <!--
 Covering the planning phase, this section should provide a relatively detailed plan of how work will start on the project. This section is important because projects need to get up and running quickly.
 
@@ -19,7 +19,7 @@ Covering the planning phase, this section should provide a relatively detailed p
 This project has a short start-up phase. I have already coordinated with Hervé Pagès to identify critical tasks for each of the Aims (see "Proposal"). The codebase and dissemination method have already been created (GitHub and Bioconductor, respectively), and I have acquired write access to the codebase from Hervé Pagès. Additionally, I have experience contributing to Biostrings in the past, so I am relatively familiar with the codebase and contribution pipeline. As a result, I would be ready to begin work on Aim 1 from the moment the grant is awarded.
 
 
-### Technical delivery
+### Technical Delivery
 <!--
 Covering the actual delivery of the project this section should provide at least a high-level the implementation. 
 
@@ -49,7 +49,7 @@ Specific deliverables are as follows:
 - August: Submit updated Biostrings manuscript to R Journal.
 - October 2025: Code finalized in Bioconductor release version 3.22.
 
-### Other aspects
+### Other Aspects
 <!--
 Covering non-technical activities like on-going publicity, paper preparation, discussion groups etc. that might be required to facilitate successful delivery of the project.
 
