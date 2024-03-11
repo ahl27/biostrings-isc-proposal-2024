@@ -23,11 +23,13 @@ jobs:
     
     - name: Install pandoc
       uses: r-lib/actions/setup-pandoc@v2
-    
+
+    # installing via `system` because calling in shell has been causing me issues
     - name: Install dependencies with CRAN
       run: |
         options(repos = c(CRAN = "https://cran.r-project.org"))
         install.packages(c("knitr", "rmarkdown"), quiet=TRUE)
+        system("apt-get install -y texlive-latex-base")
       shell: Rscript {0}
 
     - name: Cache R packages
