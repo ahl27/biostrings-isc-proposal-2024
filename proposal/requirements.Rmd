@@ -10,7 +10,7 @@ The primary requirement for making this project happen is a developer with the t
 Who needs to be involved, what's the proposed structure, what will it take to get their involvement?
 -->
 
-I (Aidan Lakshman) will be the primary developer on this project. I am a PhD student in the Department of Biomedical Informatics at the University of Pittsburgh. In my work, I am a developer of the [SynExtend package](https://bioconductor.org/packages/release/bioc/html/SynExtend.html) that is dependent upon Biostrings. I have a high level of expertise with R, as demonstrated by my submissions to base R (e.g., [dendrapply](https://bugs.r-project.org/show_bug.cgi?id=18480), [wilcox](https://bugs.r-project.org/show_bug.cgi?id=18655)) and my contributions to Biostrings (e.g., [AAStrings](https://github.com/Bioconductor/Biostrings/pull/97)). During my work on Biostrings, I developed a strong working relationship with the current maintainer, Hervé Pagès. If funded, I will conduct this project during the last year of my PhD, and then the package will be in a state where I can continue to support it longer-term in conjunction with others in the Bioconductor community.
+I (Aidan Lakshman) will be the primary developer on this project. I am a PhD student in the Department of Biomedical Informatics at the University of Pittsburgh. In my work, I am a developer of the [SynExtend package](https://bioconductor.org/packages/release/bioc/html/SynExtend.html), which is dependent upon Biostrings. I have a high level of expertise with R, as demonstrated by my submissions to base R (e.g., [dendrapply](https://bugs.r-project.org/show_bug.cgi?id=18480), [wilcox](https://bugs.r-project.org/show_bug.cgi?id=18655)) and my contributions to Biostrings (e.g., [AAStrings](https://github.com/Bioconductor/Biostrings/pull/97)). During my work on Biostrings, I developed a strong working relationship with the current maintainer, Hervé Pagès. If funded, I will conduct this project during the last year of my PhD, and then the package will be in a state where I can continue to support it longer-term in conjunction with others in the Bioconductor community.
 
 Auxiliary supporters of this proposal are my PhD advisor, Erik Wright, and current Biostrings maintainer Hervé Pagès. Erik Wright is a past contributor to Biostrings, and is supportive of me committing 20% of my work hours to this project. Both Erik Wright and Hervé Pagès will provide advising throughout the project to ensure contributed code is high quality and to prepare me to become a long-term maintainer of Biostrings. Their primary contribution will take the form of code reviews and suggestions for additional improvements. 
 
@@ -20,6 +20,8 @@ I have already met with both Erik Wright and Hervé Pagès to develop the struct
 <!-- 
 What processes need to be put in place e.g. codes of conduct, regular ISC meetings, handover to the community at large?
 -->
+
+No specific processes are required. The work done in this proposal will be regularly disseminated to the community at large via regularly scheduled Bioconductor releases (see "Measuring Success") and via conferences in summer 2025 (see "Other Aspects"). I will regularly meet with Hervé Pagès to ensure contributed code is of the quality expected for the Biostrings package. 
 
 ### Tools & Tech
 <!--
@@ -45,4 +47,4 @@ I respectfully request \$8,000 to cover my labor cost associated with the 20% ef
 A summary of the requirements that contextualises the costs
 -->
 
-The costs of this project are entirely labor hours. This project will take a substantial fraction of my workload to complete, and funding will support that effort. I expect the work done in the project to make future maintenance easier. In other words, the funding for this project will allow me to continue to maintain Biostrings in the future without further financial support.
+The costs of this project are entirely labor hours. This project will take a substantial fraction of my workload to complete, and funding will support that effort. This work focuses on eliminating accumulated technical debt in Biostrings; at the conclusion of this project, the workload to maintain Biostrings will have been significantly reduced. In other words, the funding for this project will allow me to continue to maintain Biostrings in the future without further financial support.
