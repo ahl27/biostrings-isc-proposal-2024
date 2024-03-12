@@ -14,7 +14,7 @@ I (Aidan Lakshman) will be the primary developer on this project. I am a PhD stu
 
 Auxiliary supporters of this proposal are my PhD advisor, Erik Wright, and current Biostrings maintainer Hervé Pagès. Erik Wright is a past contributor to Biostrings, and is supportive of me committing 20% of my work hours to this project. Both Erik Wright and Hervé Pagès will provide advising throughout the project to ensure contributed code is high quality and to prepare me to become a long-term maintainer of Biostrings. Their primary contribution will take the form of code reviews and suggestions for additional improvements. 
 
-I have already met with both Erik Wright and Hervé Pagès to develop the structure of this proposal--letters of support from both will be included.
+I have already met with both Erik Wright and Hervé Pagès to develop the structure of this proposal--letters of support are available at the top of this proposal.
 
 ### Processes
 <!-- 

@@ -14,8 +14,6 @@ Erik S. Wright - Associate Professor, University of Pittsburgh ([Letter of Suppo
 
 Hervé Pagès - Bioconductor Core Team, Biostrings Maintainer
 
-Letters of support will be added shortly.
-
 <!--
 ### Consulted
 <!-- 
