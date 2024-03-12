@@ -41,10 +41,9 @@ Specific deliverables are as follows:
 - Sept. 31: Open bugs from Biostrings GitHub resolved.
 - Oct. 15: Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
 - Dec. 31: Container-related tasks for `XString` objects completed.
-- Mar. 31: Utility-related tasks for `XString` objects completed. Aim 2 complete.
-- Apr. 15: Biostrings release for Bioconductor v3.21 finalized. 
-- May 10: Optimized `readXStringSet` function completed.
-- June 1: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 3 Complete. Codebase available in Bioconductor devel branch (v3.22)
+- Mar. 31: Utility-related tasks for `XString` objects completed. Aim 2 complete; Biostrings release for Bioconductor v3.21 finalized.
+- Apr. 30: Optimized `readXStringSet` function completed.
+- May 30: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 3 Complete. Codebase available in Bioconductor devel branch (v3.22)
 - July: Present at Bioc2025 and useR! 2025.
 - August: Submit updated Biostrings manuscript to R Journal.
 - October 2025: Code finalized in Bioconductor release version 3.22.
