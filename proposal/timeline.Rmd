@@ -4,7 +4,7 @@ I plan to complete the proposed work in a one-year time period. As funding comme
 
 Since the package is hosted on Bioconductor, large milestones are already clearly defined. Bioconductor releases new versions in October and April, which will each act as milestones for delivery of the first two Aims. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
 
-![Figure 2. Timeline of aims and milestones(M) throughout the project.](data/Timeline.png)
+![Figure 2. Timeline of aims and milestones (M) throughout the project.](data/Timeline.png)
 
 ### Start-Up Phase
 <!--
@@ -62,7 +62,7 @@ Covering non-technical activities like on-going publicity, paper preparation, di
 
 This project will be highlighted through a variety of methods.
 
-Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to host at R-bloggers.com).
+Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to be cross-listed at R-bloggers.com).
 
 As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. I will apply to present the work done in this proposal at both of these conferences. This will also provide a good opporunity to highlight the ISC's contribution to this project.
 
