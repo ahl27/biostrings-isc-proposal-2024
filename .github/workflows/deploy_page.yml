@@ -21,8 +21,7 @@ jobs:
     - name: Install dependencies with apt
       run: |
         apt-get update
-        apt-get install -y texlive-latex-base texlive-fonts-extra git lmodern texlive-latex-recommended 
-texlive-latex-extra rsync
+        apt-get install -y texlive-latex-base texlive-fonts-extra git lmodern texlive-latex-recommended texlive-latex-extra rsync
 
     - name: Restore cached R packages
       if: runner.os != 'Windows'
