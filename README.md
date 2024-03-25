@@ -1,5 +1,5 @@
 # Biostrings ISC Proposal
-This repository contains my proposal to improve the Biostrings package, submitted to the Infrastructure Steering Committee (ISC) of the [R Consortium](https://www.r-consortium.org).
+This repository contains my proposal to improve the Biostrings package, submitted to the [Infrastructure Steering Committee](https://www.r-consortium.org/all-projects/call-for-proposals) (ISC) of the [R Consortium](https://www.r-consortium.org).
 
 ## Background 
 
