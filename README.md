@@ -1,6 +1,4 @@
 # Biostrings ISC Proposal
-[![Build Status](https://travis-ci.org/ahl27/biostrings-isc-proposal-2024.svg?branch=master)](https://travis-ci.org/ahl27/biostrings-isc-proposal-2024)
-
 This repository contains my proposal to improve the Biostrings package, submitted to the Infrastructure Steering Committee (ISC) of the [R Consortium](https://www.r-consortium.org).
 
 ## Background 
