@@ -48,7 +48,6 @@ The remainder of items on the Biostrings TODO list fall into three categories: "
 Matching strings is a common task in bioinformatics, and, while Biostrings does provide a host of tools for string matching, many of Biostrings' tools are underdeveloped and/or confusing to use. For example, the following interaction is clearly not ideal:
 
 ```{r, echo=TRUE, error=TRUE}
-library(Biostrings, quietly = TRUE)
 pd <- PDict(mkAllStrings(DNA_BASES, 3))
 strs <- DNAStringSet(c("ATGCATGCA", "ATGATCATGA"))
 matchPDict(pd, strs)
@@ -58,7 +57,6 @@ vmatchPDict(pd, strs)
 Additionally, string matching doesn't support the widely used [IUPAC ambiguity codes](https://www.dnabaser.com/articles/IUPAC%20ambiguity%20codes.html):
 
 ```{r, echo=TRUE, error=TRUE}
-library(Biostrings, quietly = TRUE)
 patterns <- DNAStringSet(c("ATR", "GCY"))
 pd <- PDict(patterns)
 ```
