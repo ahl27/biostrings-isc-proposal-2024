@@ -2,7 +2,7 @@
 
 I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposal is June 1, 2024 - June 1, 2025. A summary of the timeline of aims is included below, and a detailed description follows.
 
-Since the package is hosted on Bioconductor, large milestones are already clearly defined. Bioconductor releases new versions in October and April, which will each act as milestones for delivery of the first two Aims. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
+Bioconductor releases new versions in October and April, which will each act as milestones for delivery of the first two Aims. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
 
 ![Figure 2. Timeline of aims and milestones (M) throughout the project. M1 and M2 are Bioconductor releases 3.20 and 3.21 (respectively), and M3 is the conclusion of the grant.](data/Timeline.png)
 
@@ -32,7 +32,9 @@ Aim 1: Finished by October 2024, in time for Bioconductor release 3.20.
 
 Aim 2: Finished by April 2025, in time for Bioconductor release 3.21.
 
-Aim 3: Finished by June 2025 and merged into Bioconductor version 3.22 (development). Present on improvements at conferences, finalize changes in time for Bioconductor release 3.22 in October 2025.
+Aim 3: Finished by June 2025 and merged into Bioconductor version 3.22 (development). 
+
+The post-grant period will involve presenting on these improvements at conferences and finalizing Aim 3 changes in time for Bioconductor release 3.22 in October 2025.
 
 Specific deliverables are as follows:
 
@@ -40,7 +42,7 @@ Specific deliverables are as follows:
 - June 30: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
 - Aug. 15: Testing framework for Biostrings implemented, test suites included in `tests` folder in codebase.
 - Sept. 31: Open bugs from Biostrings GitHub resolved. Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
-- Nov. 30: Variable width-matching for `PDict` objects completed, Trusted Bands phased out.
+- Nov. 30: Trusted Bands phased out out `matchPDict`
 - Jan. 31: Support ambiguity codes for `PDict` objects.
 - Feb. 28: `vmatchPDict` implemented.
 - Mar. 31: All other small tasks for `PDict` objects and string matching completed. Aim 2 complete; Biostrings release for Bioconductor v3.21 finalized.
