@@ -561,23 +561,44 @@ Biostrings does provide a host of tools for string matching, many of
 Biostrings’ tools are underdeveloped and/or confusing to use. For
 example, the following interaction is clearly not ideal:</p>
 <pre class="r"><code>library(Biostrings, quietly = TRUE)</code></pre>
-<pre><code>## Error in library(Biostrings, quietly = TRUE): there is no package called &#39;Biostrings&#39;</code></pre>
-<pre class="r"><code>pd &lt;- PDict(mkAllStrings(DNA_BASES, 3))</code></pre>
-<pre><code>## Error in PDict(mkAllStrings(DNA_BASES, 3)): could not find function &quot;PDict&quot;</code></pre>
-<pre class="r"><code>strs &lt;- DNAStringSet(c(&quot;ATGCATGCA&quot;, &quot;ATGATCATGA&quot;))</code></pre>
-<pre><code>## Error in DNAStringSet(c(&quot;ATGCATGCA&quot;, &quot;ATGATCATGA&quot;)): could not find function &quot;DNAStringSet&quot;</code></pre>
-<pre class="r"><code>matchPDict(pd, strs)</code></pre>
-<pre><code>## Error in matchPDict(pd, strs): could not find function &quot;matchPDict&quot;</code></pre>
+<pre><code>## 
+## Attaching package: &#39;BiocGenerics&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     IQR, mad, sd, var, xtabs</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+##     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+##     get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+##     match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+##     Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+##     table, tapply, union, unique, unsplit, which.max, which.min</code></pre>
+<pre><code>## 
+## Attaching package: &#39;S4Vectors&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:utils&#39;:
+## 
+##     findMatches</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     expand.grid, I, unname</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Biostrings&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     strsplit</code></pre>
+<pre class="r"><code>pd &lt;- PDict(mkAllStrings(DNA_BASES, 3))
+strs &lt;- DNAStringSet(c(&quot;ATGCATGCA&quot;, &quot;ATGATCATGA&quot;))
+matchPDict(pd, strs)</code></pre>
+<pre><code>## Error in matchPDict(pd, strs): please use vmatchPDict() when &#39;subject&#39; is an XStringSet object (multiple sequence)</code></pre>
 <pre class="r"><code>vmatchPDict(pd, strs)</code></pre>
-<pre><code>## Error in vmatchPDict(pd, strs): could not find function &quot;vmatchPDict&quot;</code></pre>
+<pre><code>## Error in .local(pdict, subject, max.mismatch, min.mismatch, with.indels, : vmatchPDict() is not ready yet, sorry</code></pre>
 <p>Additionally, string matching doesn’t support the widely used <a href="https://www.dnabaser.com/articles/IUPAC%20ambiguity%20codes.html">IUPAC
 ambiguity codes</a>:</p>
-<pre class="r"><code>library(Biostrings, quietly = TRUE)</code></pre>
-<pre><code>## Error in library(Biostrings, quietly = TRUE): there is no package called &#39;Biostrings&#39;</code></pre>
-<pre class="r"><code>patterns &lt;- DNAStringSet(c(&quot;ATR&quot;, &quot;GCY&quot;))</code></pre>
-<pre><code>## Error in DNAStringSet(c(&quot;ATR&quot;, &quot;GCY&quot;)): could not find function &quot;DNAStringSet&quot;</code></pre>
-<pre class="r"><code>pd &lt;- PDict(patterns)</code></pre>
-<pre><code>## Error in PDict(patterns): could not find function &quot;PDict&quot;</code></pre>
+<pre class="r"><code>library(Biostrings, quietly = TRUE)
+patterns &lt;- DNAStringSet(c(&quot;ATR&quot;, &quot;GCY&quot;))
+pd &lt;- PDict(patterns)</code></pre>
+<pre><code>## Error in .Call2(&quot;ACtree2_build&quot;, tb, pp_exclude, base_codes, nodebuf_ptr, : non base DNA letter found in Trusted Band for pattern 1</code></pre>
 <p>Searching for strings containing some ambiguities is a common task,
 and not supporting this functionality limits the usefulness of
 Biostrings for bioinformatics.</p>
