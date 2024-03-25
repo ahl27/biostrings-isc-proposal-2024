@@ -38,7 +38,7 @@ Specific deliverables are as follows:
 
 - June 1: Project milestones added to this project's [GitHub project tracker](https://github.com/ahl27/biostrings-isc-proposal-2024/projects)
 - June 30: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
-- Aug. 15: Testing framework for Biostrings implented, test suites included in `tests` folder in codebase.
+- Aug. 15: Testing framework for Biostrings implemented, test suites included in `tests` folder in codebase.
 - Sept. 31: Open bugs from Biostrings GitHub resolved. Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
 - Nov. 30: Variable width-matching for `PDict` objects completed, Trusted Bands phased out.
 - Jan. 31: Support ambiguity codes for `PDict` objects.
@@ -46,7 +46,7 @@ Specific deliverables are as follows:
 - Mar. 31: All other small tasks for `PDict` objects and string matching completed. Aim 2 complete; Biostrings release for Bioconductor v3.21 finalized.
 - Apr. 30: Optimized `readXStringSet` function completed.
 - May 30: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 3 Complete. Codebase available in Bioconductor devel branch (v3.22). Funded portion of proposal ends.
-- July: Present at Bioc2025 and useR! 2025.
+- July: Present at BioC2025 and useR! 2025.
 - October 2025: Code finalized in Bioconductor release version 3.22.
 
 ### Other Aspects
@@ -64,4 +64,4 @@ This project will be highlighted through a variety of methods.
 
 Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to be cross-listed at R-bloggers.com).
 
-As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. I will apply to present the work done in this proposal at both of these conferences. This will also provide a good opporunity to highlight the ISC's contribution to this project.
+As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. I will apply to present the work done in this proposal at both of these conferences. This will also provide a good opportunity to highlight the ISC's contribution to this project.
