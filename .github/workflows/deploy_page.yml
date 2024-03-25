@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies with apt
       run: |
         apt-get update
-        apt-get install -y texlive-latex-base texlive-fonts-extra git lmodern texlive-latex-recommended texlive-latex-extra rsync
+        apt-get install -y texlive-latex-base texlive-fonts-extra git lmodern texlive-latex-recommended texlive-latex-extra rsync libcurl4
 
     - name: Restore cached R packages
       if: runner.os != 'Windows'
@@ -35,7 +35,7 @@ jobs:
       run: |
         options(timeout = max(1000, getOption("timeout")))
         options(repos = c(CRAN = "https://cran.r-project.org"))
-        install.packages(c("knitr", "rmarkdown", "BiocManager"))
+        install.packages(c("knitr", "rmarkdown", "BiocManager", "RCurl"))
         BiocManager::install("Biostrings")
         write.csv(installed.packages()[,c(1,3)], file="./dependencies.csv")
       shell: Rscript {0}
