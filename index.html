@@ -709,7 +709,7 @@ changes in time for Bioconductor release 3.22 in October 2025.</p>
 project tracker</a></li>
 <li>June 30: Biostrings GitHub issue tracker cleaned up. All open issues
 will be verified unresolved bugs.</li>
-<li>Aug. 15: Testing framework for Biostrings implented, test suites
+<li>Aug. 15: Testing framework for Biostrings implemented, test suites
 included in <code>tests</code> folder in codebase.</li>
 <li>Sept. 31: Open bugs from Biostrings GitHub resolved. Aim 1 complete;
 Biostrings release for Bioconductor v3.20 finalized.</li>
@@ -727,7 +727,7 @@ completed.</li>
 for <code>writeXStringSet</code> implemented. Aim 3 Complete. Codebase
 available in Bioconductor devel branch (v3.22). Funded portion of
 proposal ends.</li>
-<li>July: Present at Bioc2025 and useR! 2025.</li>
+<li>July: Present at BioC2025 and useR! 2025.</li>
 <li>October 2025: Code finalized in Bioconductor release version
 3.22.</li>
 </ul>
@@ -751,7 +751,7 @@ blog posts to <a href="https://www.ahl27.com/blog/">my website</a>
 <p>As mentioned previously, this proposal will conclude in June 2025,
 shortly before the annual useR! and Bioconductor conferences. I will
 apply to present the work done in this proposal at both of these
-conferences. This will also provide a good opporunity to highlight the
+conferences. This will also provide a good opportunity to highlight the
 ISC’s contribution to this project.</p>
 <hr />
 </div>
@@ -928,18 +928,22 @@ Bioconductor and R version release.</li>
 or features, including the various “nice to have” optimizations detailed
 in the Biostrings TODO file. An illustrative example of this is adding
 an internal <code>NucleotideString</code> virtual class to simplify the
-codebase. Many functions employ checks like:</li>
+codebase. Many internal functions make checks like
+<code>if(is(x, &quot;DNAString&quot;) || is(x, &quot;RNAString&quot;))</code>, which could
+be simplified to just <code>if(is(x, &quot;NucleotideString&quot;))</code>.
+Generic functions that act identically on <code>DNAString</code> and
+<code>RNAString</code> objects could just call a
+<code>NucleotideString</code> object instead. This would also simplify
+later unit testing. Enhancements like these are reserved for future work
+since they have little impact on end-users and are not high
+priority.</li>
 </ol>
-<pre><code>if (is(x@subject, &quot;DNAString&quot;) || is(x@subject, &quot;RNAString&quot;)) ...</code></pre>
-<pre><code>This change would simplify these to just:</code></pre>
-<pre><code>if (is(x@subject, &quot;NucleotideString&quot;)) ...</code></pre>
-<pre><code>This would also simplify later unit testing. Enhancements like these are reserved for future work since they have little impact on end-users and are not high priority.</code></pre>
 <p>It’s also important to emphasize that future work will target
-community involvement. Once the initial work of cleaning up the package
-and implementing solid testing is done, allowing and encouraging
-contribution will be much easier. A focus of the planned conference
-talks at useR! and BioC2025 will be trying to get more community members
-involved in contributing code to Biostrings.</p>
+increasing community involvement. Once the initial work of cleaning up
+the package and implementing solid testing is done, allowing and
+encouraging contribution will be much easier. A focus of the planned
+conference talks at useR! and BioC2025 will be trying to get more
+community members involved in contributing code to Biostrings.</p>
 </div>
 <div id="key-risks" class="section level3">
 <h3>Key Risks</h3>
