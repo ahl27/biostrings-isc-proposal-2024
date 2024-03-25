@@ -29,42 +29,57 @@ There are three categories of changes needed to sustain the utility of Biostring
 
 #### Aim 1: Resolving bugs and increasing robustness
 
+<<<<<<< HEAD
 The goal of this aim is the prepare the Biostrings codebase for future improvements and facilitate ongoing maintenance. Biostrings has had minimal maintenance for the past 5 years, and as a result lacks many processes that would ease continued development. The goals of the Aim are the following:
+=======
+The goal of this aim is to prepare the Biostrings codebase for future improvements and facilitate ongoing maintenance. Biostrings has had minimal maintenance for the past 5 years, and as a result lacks many processes that ease continued development. The goals of the Aim are the following:
+>>>>>>> e9c1a52 (Update to new Aim 2)
 
 1. Clean up outdated documentation and bug reports. Many internal documentation files and scripts have `TODO` tags or warnings that are out of date. Additionally, many bug reports on GitHub have been resolved but remain open. This makes ongoing maintenance challenging, as it requires additional developer effort to determine if a bug still exists before addressing it. This task will clean up the codebase, update outdated documentation, and clean up resolved bug reports.
 2. Implement unit testing. Much of this project depends on improving and adding additional functionality to Biostrings. However, as mentioned in the Problem Definition section, Biostrings is a critical package with over a million downloads per year. As such, robust unit testing is essential to ensure that other proposed changes do not break existing functionality for end users. Robust testing suites would also make it easier for maintainers to review community-contributed code, thus making it easier to involve the community in Biostrings.
-3. Resolving outstanding bug reports. While many bug reports on GitHub are resolved, there are many that remain unaddressed. This task will resolve any remaining bug reports. Part of this task will involve reaching out to bug reporters for additional detail, as some bug reports are years old without any updates (see [here](https://github.com/Bioconductor/Biostrings/issues/14) or [here](https://github.com/Bioconductor/Biostrings/issues/25) examples of very old bug reports).
+3. Resolving outstanding bug reports and old TODO items. While many bug reports on GitHub are resolved, there are many that remain unaddressed. This task will resolve any remaining bug reports. Part of this task will involve reaching out to bug reporters for additional detail, as some bug reports are years old without any updates (see [here](https://github.com/Bioconductor/Biostrings/issues/25) or [here](https://github.com/Bioconductor/Biostrings/issues/51) examples of very old bug reports). This task will also address some small high-priority tasks on the Biostrings TODO list (see below for a complete list), since they overlap with many of the GitHub issues.
 
-Successful completion of this Aim will result in a cleaner Biostrings GitHub repository, resolution of outstanding user-submitted bugs, and a robust testing pipeline for future submissions. I expect this Aim to take three months; most of the GitHub issues are relatively quick to fix, so the majority of the time will be dedicated to building a robust testing infrastructure.
+The Biostrings repository contains a TODO list with many tasks, ranging from small bugs to long-term feature requests. Task 3 will address the small tasks from this list that overlap with existing GitHub issues:
+ - Fixing stack overflow issues relating to `XStringSet` comparisons (mentioned in the aforementioned [Issue 51](https://github.com/Bioconductor/Biostrings/issues/51))
+ - Ensure `validObject()` correctly works on `XStringSet` objects
+ - Implement `patternFrequency` methods for `XStringSet` and `XStringSetViews` objects
 
-#### Aim 2: Completing critical items on the Biostrings developers' TODO list
+Successful completion of this Aim will result in a cleaner Biostrings GitHub repository, resolution of outstanding user-submitted bugs, and a robust testing pipeline for future submissions. I expect this Aim to take three months; most of the GitHub issues are relatively quick to fix, so the majority of the time will be dedicated to building a robust testing infrastructure. The outstanding TODO items are also similarly quick to address--longer issues will be reserved for Aim 3.
 
-This will focus on implementing TODO items identified by Biostrings developers. As this list is relatively long, Aim 2 will focus specifically on tasks relating to `XString` objects, Biostrings' foundational data structure. `XString` is a virtual class inherited by all the sequence storage containers in Biostrings (`DNAString` for DNA, `RNAString` for RNA, `AAString` for amino acids, and `BString` for general sequences). These tasks also relate to `XStringSet` objects (sets of multiple `XString` objects, such as a sequence alignment) and `XStringViews` objects (multiple subsequences of the same `XString` object).
+Aim 1 is scheduled to be addressed first because it includes checks for later work and fixes for user-identified issues. I see these improvements as the highest priority for the Biostrings codebase.
 
-This subset of tasks was chosen for the following reasons:
+#### Aim 2: Fixing String Matching
 
-1. `XString` objects are the most widely used facet of Biostrings, so improvements to them will benefit the greatest number of users
-2. Working on `XString` objects will give me greater familiarity with these structures, providing a good foundational set up for Aim 3.
-3. The tasks relating to `XString` objects are well defined and not overly complex, meaning there is a low risk of them taking longer than expected.
+The remainder of items on the Biostrings TODO list fall into three categories: "nice to have" feature requests, low-priority issues, and problems with string matching. The first two of these categories can be delayed to future work, but the third category directly impacts users. This aim will focus on cleaning up the string matching libraries of Biostrings.
 
-The changes proposed fall into two general categories: Container changes and Utility changes.
+Matching strings is a common task in bioinformatics, and, while Biostrings does provide a host of tools for string matching, many of Biostrings' tools are underdeveloped and/or confusing to use. For example, the following interaction is clearly not ideal:
 
-- Container changes are changes to the data structures themselves and their internal operations:
-  - Refactor `XStringSet` to replace elements without reallocation and data copy
-  - Support substrings of `XStringSet` objects when the set has length 1
-  - Fix `validObject()` for `XStringSet` objects
-  - Ensure `DNAStringSet(x)` does nothing when `x` already a `DNAStringSet`
-  - Add methods for `XStringSet` objects to match `XStringViews` objects (e.g., `matchPattern`)
-  - Speed up `show` method for `XStringSet` objects
-- Utility changes are changes to user-facing functions to improve interacting with `XString` objects:
-  - Improve the efficiency of `XStringSet` set operations (`union`, `intersect`, `setdiff`, `setequal`)
-  - Add `order`, `sort`, `duplicated`, `unique`, and `patternFrequency` methods for `XStringSet` and `XStringViews` objects
-  - Add comparison functions (`==`, `<`, `>`, `<=`, `>=`) for `XString` objects
-  - Add `xsmatch()` function for a `base::match()` implementation for `XString` objects
+```{r, echo=TRUE, error=TRUE}
+library(Biostrings, quietly = TRUE)
+pd <- PDict(mkAllStrings(DNA_BASES, 3))
+strs <- DNAStringSet(c("ATGCATGCA", "ATGATCATGA"))
+matchPDict(pd, strs)
+vmatchPDict(pd, strs)
+```
 
-This is the longest Aim, and is expected to take approximately six months. While there are a lot of tasks in this Aim, many of these functions are minor extensions of existing functionality and thus should not take extremely long.
+Additionally, string matching doesn't support the widely used [IUPAC ambiguity codes](https://www.dnabaser.com/articles/IUPAC%20ambiguity%20codes.html):
 
-See "Future Work" for discussion on the other tasks.
+```{r, echo=TRUE, error=TRUE}
+library(Biostrings, quietly = TRUE)
+patterns <- DNAStringSet(c("ATR", "GCY"))
+pd <- PDict(patterns)
+```
+
+Searching for strings containing some ambiguities is a common task, and not supporting this functionality limits the usefulness of Biostrings for bioinformatics. This Aim will work on improving the user experience for string matching functions by adding in capabilities that users expect to find and resolving cryptic error scenarios. More specifically, this will address the following tasks:
+
+1. Allow for variable width matching in `matchPDict`. The current implementation relies strongly on the notion of a "Trusted Band". This implementation is very difficult to understand for end-users, leading to confusion on how to use it and seemingly cryptic error messages. Trusted Bands can become a purely internal argument, removing a significant amount of user burden. This would also allow users to more easily search for variable width patterns in data, which is a common task.
+2. Allow for ambiguity codes in search strings. This has a variety of use-cases--one such example is searching for a particular amino acid in a nucleotide coding sequence. Many amino acids are encoded by multiple codons, and the current implementation requires specifying all of these codons individually. For example, searching for Valine could be done by simply looking for `"GTN"` rather than `c("GTA", "GTC", "GTT", "GTG")`. This would also improve internal performance by decreasing the number of searches performed.
+3. Resolve the circular error of `matchPDict` and `vmatchPDict` shown previously. This involves implementing `vmatchPDict` and removing these error messages.
+4. Implement small helper functions for `PDict` objects to improve user experience. Specifically, implement `reverseComplement`, `duplicated`, and `patternFrequency` for `PDict` objects, and add the `skip.invalid.patterns` argument for `PDict` that has been promised in documentation for years. This will also add in helper functions to clarify available algorithms for `matchPDict`, which are currently relatively hard to understand.
+
+Aim 2 is the longest aim, and is anticipated to take 6 months. While many of these tasks are nontrivial, much of the initial plans to implement them are detailed in the Biostrings TODO file. The remaining tasks in the TODO file ("nice to have" and low-priority items) will be addressed after the conclusion of this grant. See "Future Work" for more discussion on these tasks. 
+
+Aim 2 is positioned second due to it containing large tasks that will improve user performance, but that are less critical that open bug reports. The conclusion of Aims 1 and 2 will result in a significantly improved user experience for R's bioinformatics community.
 
 #### Aim 3: Enhancing input/output for modern sequencing technologies
 
@@ -72,4 +87,4 @@ Biostrings was initially developed during a time when sequencing produced megaba
 
 To enhance Biostrings, I will add functionality for reading from standard gzip, bzip2, and xz connections in R. This will involve overhauling the `readXStringSet` functions within Biostrings. Furthermore, I will enable writing to alternative output file compression types (bzip2 and xz), while allowing for different compression levels. At present there is a `compression_level` argument in `writeXStringSet`, but it is unused by the function. I will focus on improving the speed of reading and writing from files so that large file sizes are no longer problematically slow. Collectively, these enhancements will propel Biostrings (and by extension, the R programming language itself) into the future of big biological data.
 
-
+This Aim is placed last due it being oriented towards the future of Biostrings. Aim 1 addresses problems users currently have, Aim 2 addresses less critical current issues, and Aim 3 prepares Biostrings for the future.

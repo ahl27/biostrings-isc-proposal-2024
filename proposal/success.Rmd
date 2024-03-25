@@ -26,7 +26,7 @@ How will we know when success is achieved, what markers can we use along the way
 
 Success will be measured through well-defined milestones. Many of the specific deliverables are mentioned in the "Technical Delivery" section. 
 
-Each Aim is composed of a set of discrete tasks. We can thus measure progress by how many tasks have been completed. Biostrings is distributed through Bioconductor, which has two version releases per year. These line up perfectly with the planned timeline of this proposal. The conclusion of Aim 1 is measurable by an empty issue tracker on GitHub, and will be completed for Bioconductor's version 3.20 release in October. The conclusion of Aim 2 is measurable by how many tasks in the TODO file have been completed, and will be completed for Bioconductor's version 3.21 release in April. The final Aim will be completed by the end of the proposed timeline, in June. 
+Each Aim is composed of a set of discrete tasks. We can thus measure progress by how many tasks have been completed. Biostrings is distributed through Bioconductor, which has two version releases per year. These line up perfectly with the planned timeline of this proposal. The conclusion of Aim 1 is measurable by an empty issue tracker on GitHub, and will be completed for Bioconductor's version 3.20 release in October. The conclusion of Aim 2 is measurable by how many tasks in the TODO file have been completed, and will be completed for Bioconductor's version 3.21 release in April. These tasks will be itemized on the milestones page for the project's GitHub (see below). The final Aim will be completed by the end of the proposed timeline, in June. 
 
 If funded, I will add an itemized issue tracker to this proposal with percentage completion rates. This will be regularly updated with the project, allowing anyone interested in the project to follow its status.
 
@@ -40,9 +40,17 @@ I plan to continue maintenance of this project into the future. This funding wil
 Future work falls into two categories:
 
 1. Continued Maintenance. This is the expected burden of maintaining the package: dealing with bug reports, responding to users on GitHub and Bioconductor, and keeping the package updated for each subsequent Bioconductor and R version release.
-2. Feature enhancements. This includes adding additional enhancements or features. A key example of this is the long list of items related to `PDict` objects in the Biostrings develop TODO file--these are valuable features that would help analyses by end users, but that are too time-intensive to fit into this grant.
+2. Feature enhancements. This includes adding additional enhancements or features, including the various "nice to have" optimizations detailed in the Biostrings TODO file. An illustrative example of this is adding an internal `NucleotideString` virtual class to simplify the codebase. Many functions employ checks like:
+```
+if (is(x@subject, "DNAString") || is(x@subject, "RNAString")) ...
+```
+This change would simplify these to just:
+```
+if (is(x@subject, "NucleotideString")) ...
+```
+This would also simplify later unit testing. Enhancements like these are reserved for future work since they have little impact on end-users and are not high priority.
 
-It's important to emphasize that future work will target community involvement. Once the initial work of cleaning up the package and implementing solid testing is done, allowing and encouraging contribution will be much easier. A focus of the planned conference talks at useR! and BioC2025 will be trying to get more community members involved in contributing code to Biostrings. 
+It's also important to emphasize that future work will target community involvement. Once the initial work of cleaning up the package and implementing solid testing is done, allowing and encouraging contribution will be much easier. A focus of the planned conference talks at useR! and BioC2025 will be trying to get more community members involved in contributing code to Biostrings. 
 
 ### Key Risks
 <!-- 

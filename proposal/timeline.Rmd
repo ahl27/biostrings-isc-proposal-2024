@@ -37,11 +37,12 @@ Aim 3: Finished by June 2025 and merged into Bioconductor version 3.22 (developm
 Specific deliverables are as follows:
 
 - June 30: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
-- Aug. 31: Testing framework for Biostrings implented, test suites included in `tests` folder in codebase.
-- Sept. 31: Open bugs from Biostrings GitHub resolved.
-- Oct. 15: Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
-- Dec. 31: Container-related tasks for `XString` objects completed.
-- Mar. 31: Utility-related tasks for `XString` objects completed. Aim 2 complete; Biostrings release for Bioconductor v3.21 finalized.
+- Aug. 15: Testing framework for Biostrings implented, test suites included in `tests` folder in codebase.
+- Sept. 31: Open bugs from Biostrings GitHub resolved. Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
+- Nov. 30: Variable width-matching for `PDict` objects completed, Trusted Bands phased out.
+- Jan. 31: Support ambiguity codes for `PDict` objects.
+- Feb. 28: `vmatchPDict` implemented.
+- Mar. 31: All other small tasks for `PDict` objects and string matching completed. Aim 2 complete; Biostrings release for Bioconductor v3.21 finalized.
 - Apr. 30: Optimized `readXStringSet` function completed.
 - May 30: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 3 Complete. Codebase available in Bioconductor devel branch (v3.22). Funded portion of proposal ends.
 - July: Present at Bioc2025 and useR! 2025.
