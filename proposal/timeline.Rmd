@@ -1,12 +1,12 @@
 # Project Plan
 
-I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposal is June 1, 2024 - June 1, 2025. A summary of the timeline of aims is included below, and a detailed description follows.
+I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposed work is June 1, 2024 - June 1, 2025. A summary of the timeline of Aims is included below, and a detailed description follows.
 
 Bioconductor releases new versions in mid-October and mid-April, which will each act as large milestones for delivery of this project. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
 
 A detailed listing of milestones and tasks is available on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). This project is linked to this proposal's GitHub repository, and will be kept updated throughout this project. All details are public, so any interested community members can follow its status.
 
-![Figure 2. Timeline of aims and tasks throughout the project. Everything except the string matching vignette will be released with Bioconductor v3.21.](data/Timeline.png)
+![Figure 2. Timeline of aims and tasks throughout the project. Bioconductor v3.20 releases in mid-October, and v3.21 in mid-April. Aim 1 will be released with v3.20, and everything else except the string matching vignette will be released with v3.21.](data/Timeline.png)
 
 ### Start-Up Phase
 <!--
@@ -30,15 +30,15 @@ Including target dates is really important as you need to be committed and the I
 
 Aims will be completed on the following schedule:
 
-Aim 1: Finished by October 2024, in time for Bioconductor release 3.20. (four months)
+Aim 1: Finished by October 1, 2024, in time for Bioconductor release 3.20. (four months)
 
-Aim 2: Finished by December 2024. (three months)
+Aim 2: Finished by January 1, 2025. (three months)
 
-Aim 3: Code-related tasks finished by mid-April 2025, in time for Bioconductor release 3.21. Vignette finished by June 2025. (five months)
+Aim 3: Code-related tasks finished by mid-April 2025, in time for Bioconductor release 3.21. Vignette finished by June 1, 2025. (five months)
 
-The post-grant period will involve presenting on this work at conferences and beginning on addressing low priority / "nice to have" improvements.
+The post-grant period will involve presenting on this work at conferences and beginning to address low priority / "nice to have" improvements.
 
-Estimated times for specific deliverables are detailed below. As mentioned previously, these milestones are all outlined on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`
+Estimated end dates for specific deliverables are available in the above Timeline (Fig. 2), and detailed further below. As mentioned previously, these are also available in even more detail on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`
 
 - 06/01/24: Start of the project.
 - 06/15/24: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
@@ -67,6 +67,6 @@ Covering non-technical activities like on-going publicity, paper preparation, di
 
 This project will be highlighted through a variety of methods.
 
-Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to be cross-listed at R-bloggers.com).
+Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to be cross-listed at R-bloggers.com). Regular progress updates will be disseminated via the GitHub project page for this proposal.
 
 As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. The code-related aspects of this project will be finished by mid-April, in time for the application cycles of these conferences. I will apply to present the work done in this proposal at both BioC2025 and useR! 2025; BioC2025 will highlight the improved string matching functionality, and useR! will focus on the overall ISC-funded project. Both will encourage community involvement in the new Biostrings.
