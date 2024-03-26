@@ -2,11 +2,11 @@
 
 I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposal is June 1, 2024 - June 1, 2025. A summary of the timeline of aims is included below, and a detailed description follows.
 
-Bioconductor releases new versions in October and April, which will each act as milestones for delivery of the first two Aims. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
+Bioconductor releases new versions in mid-October and mid-April, which will each act as large milestones for delivery of this project. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
 
 A detailed listing of milestones and tasks is available on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). This project is linked to this proposal's GitHub repository, and will be kept updated throughout this project. All details are public, so any interested community members can follow its status.
 
-![Figure 2. Timeline of aims and milestones (M) throughout the project. M1 and M2 are Bioconductor releases 3.20 and 3.21 (respectively), and M3 is the conclusion of the grant.](data/Timeline.png)
+![Figure 2. Timeline of aims and tasks throughout the project. Everything except the string matching vignette will be released with Bioconductor v3.21.](data/Timeline.png)
 
 ### Start-Up Phase
 <!--
@@ -30,26 +30,26 @@ Including target dates is really important as you need to be committed and the I
 
 Aims will be completed on the following schedule:
 
-Aim 1: Finished by October 2024, in time for Bioconductor release 3.20.
+Aim 1: Finished by October 2024, in time for Bioconductor release 3.20. (four months)
 
-Aim 2: Finished by April 2025, in time for Bioconductor release 3.21.
+Aim 2: Finished by December 2024. (three months)
 
-Aim 3: Finished by June 2025 and merged into Bioconductor version 3.22 (development). 
+Aim 3: Code-related tasks finished by mid-April 2025, in time for Bioconductor release 3.21. Vignette finished by June 2025. (five months)
 
-The post-grant period will involve presenting on these improvements at conferences and finalizing Aim 3 changes in time for Bioconductor release 3.22 in October 2025.
+The post-grant period will involve presenting on this work at conferences and beginning on addressing low priority / "nice to have" improvements.
 
-Specific deliverables are detailed below. As mentioned previously, these milestones are all outlined on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`
+Estimated times for specific deliverables are detailed below. As mentioned previously, these milestones are all outlined on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`
 
 - 06/01/24: Start of the project.
 - 06/15/24: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
 - 08/15/24: Testing framework for Biostrings implemented, test suites included in `tests` folder in codebase.
 - 09/30/24: Open bugs from Biostrings GitHub resolved. Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
-- 11/30/24: Trusted Bands phased out out `matchPDict`
-- 01/31/25: Support ambiguity codes for `PDict` objects.
-- 02/28/25: `vmatchPDict` implemented.
-- 03/31/25: All other small tasks for `PDict` objects and string matching completed. Aim 2 complete; Biostrings release for Bioconductor v3.21 finalized.
-- 04/30/25: Optimized `readXStringSet` function completed.
-- 05/31/25: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 3 Complete. Codebase available in Bioconductor devel branch (v3.22). Funded portion of proposal ends.
+- 11/15/25: Optimized `readXStringSet` function completed.
+- 12/31/25: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 2 Complete.
+- 01/31/25: `vmatchPDict` implemented.
+- 02/15/25: Quality of life changes for `PDict` objects and string matching completed.
+- 04/15/24: Trusted Bands phased out of `matchPDict`. Biostrings release for Bioconductor v3.21 finalized.
+- 05/31/25: Vignette for string matching completed. Aim 2 complete.
 - 06/01/25: Conclusion of this project.
 - 07/??/25: Present at BioC2025 and useR! 2025.
 - 10/01/25: Code finalized in Bioconductor release version 3.22.
@@ -69,4 +69,4 @@ This project will be highlighted through a variety of methods.
 
 Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to be cross-listed at R-bloggers.com).
 
-As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. I will apply to present the work done in this proposal at both of these conferences. This will also provide a good opportunity to highlight the ISC's contribution to this project.
+As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. The code-related aspects of this project will be finished by mid-April, in time for the application cycles of these conferences. I will apply to present the work done in this proposal at both BioC2025 and useR! 2025; BioC2025 will highlight the improved string matching functionality, and useR! will focus on the overall ISC-funded project. Both will encourage community involvement in the new Biostrings.

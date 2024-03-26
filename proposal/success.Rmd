@@ -12,8 +12,8 @@ A successful outcome for this project is the following:
 
 1. Biostrings is easily maintainable using automated testing suites.
 2. All user-submitted bugs from prior to June 2024 are resolved.
-3. Major items in the backlog of Biostrings TODOs are addressed.
-4. Biostrings has the capability to handle big biological data.
+3. Biostrings has the capability to handle big biological data.
+4. Biostrings has a robust and easy-to-use string matching library.
 
 Outcomes 1 and 2 result from Aim 1, Outcome 3 results from Aim 2, and Outcome 4 results from Aim 3.
 
@@ -28,7 +28,7 @@ How will we know when success is achieved, what markers can we use along the way
 
 Success will be measured through well-defined milestones. Many of the specific deliverables are mentioned in the "Technical Delivery" section. 
 
-Each Aim is composed of a set of discrete tasks. We can thus measure progress by how many tasks have been completed. Biostrings is distributed through Bioconductor, which has two version releases per year. These line up perfectly with the planned timeline of this proposal. The conclusion of Aim 1 is measurable by an empty issue tracker on GitHub, and will be completed for Bioconductor's version 3.20 release in October. The conclusion of Aim 2 is measurable by how many tasks in the TODO file have been completed, and will be completed for Bioconductor's version 3.21 release in April. The final Aim will be completed by the end of the proposed timeline, in June. 
+Each Aim is composed of a set of discrete tasks. We can thus measure progress by how many tasks have been completed. Biostrings is distributed through Bioconductor, which has two version releases per year. These line up perfectly with the planned timeline of this proposal. The conclusion of Aim 1 is measurable by an empty issue tracker on GitHub, and will be completed for Bioconductor's version 3.20 release in October. Aim 2 is measurable by updated implementations of the read/write functions for strings, and Aim 3 is measurable by how many tasks in the TODO file have been completed. Aim 2 and most of Aim 3 will be completed for Bioconductor's version 3.21 release in April, and the remaining time will be spent on developing a high quality vignette for new functionality added. 
 
 To keep track of the tasks for each Aim, I have created a project tracker available on this [proposal's GitHub](https://github.com/ahl27/biostrings-isc-proposal-2024/projects). This will be regularly updated with the project, allowing anyone interested in the project to follow its status.
 
@@ -46,6 +46,8 @@ Future work falls into two categories:
 
 Future work will also target increasing community involvement. Once the initial work of cleaning up the package and implementing solid testing is done, allowing and encouraging contribution will be much easier. A focus of the planned conference talks at useR! and BioC2025 will be trying to get more community members involved in contributing code to Biostrings. 
 
+There is a chance that this development proceeds faster than planned. In this case, any remaining time will be dedicated to beginning work on the future tasks detailed here.
+
 ### Key Risks
 <!-- 
 What sort of things could come up that can delay or break the project?
@@ -59,4 +61,4 @@ What sort of things could come up that can delay or break the project?
 
 Much of the technical scaffold for this project is already in place: it exists on GitHub, is distributed through a carefully curated package manager with regular release times, has an itemized list of tasks, and doesn't require additional tooling or technology to complete. 
 
-The primary mode of failure of this project is tasks taking longer than expected to complete. For this reason, tasks are arranged in order of decreasing importance: Aim 1 is the most critical, followed by Aim 2, and finally Aim 3. This project will allow me to subsume the position of maintainer of Biostrings--in the event that some tasks do not complete within the timeframe of the project, I will continue to work on them until they are completed. 
+The primary mode of failure of this project is tasks taking longer than expected to complete. For this reason, tasks are arranged in order of decreasing importance: Aim 1 is the most critical, followed by Aim 2, and finally Aim 3. The highest risk task is Aim 3, Task 3. This project will allow me to subsume the position of maintainer of Biostrings--in the event that some tasks do not complete within the timeframe of the project, I will continue to work on them until they are completed. 
