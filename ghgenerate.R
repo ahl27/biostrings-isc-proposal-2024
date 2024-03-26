@@ -1,4 +1,4 @@
-proposal<-"Critical Updates to Biostrings, the Linchpin of Bioinformatics"
+proposal<-"Critical Updates to Biostrings"
 proposal.file<-"isc-proposal.Rmd"
 author<-"Aidan Lakshman"
 
