@@ -11,7 +11,7 @@
 
 <meta name="author" content="Aidan Lakshman" />
 
-<meta name="date" content="2024-03-26" />
+<meta name="date" content="2024-03-27" />
 
 <title>Critical Updates to Biostrings</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Critical Updates to Biostrings</h1>
 <h4 class="author">Aidan Lakshman</h4>
-<h4 class="date">2024-03-26</h4>
+<h4 class="date">2024-03-27</h4>
 
 </div>
 
@@ -397,11 +397,16 @@ It is important to cover:
  - [ ] Have there been previous attempts to resolve the problem
  - [ ] Why it should be tackled
 -->
-<p>Biostrings is an essential package in the R ecosystem, with over one
-million installations per year (Fig. 1). This places Bioconductor as the
-11th most popular package on the Bioconductor platform. Over 500
-packages on Bioconductor and 65 packages on CRAN depend on or suggest
-Biostrings.</p>
+<p>R is unquestionably one of the top programming languages for
+bioinformatics. Nearly every developer or scientist using R for
+bioinformatics will utilize the Biostrings package, which provides key
+functionality for efficiently working with genetic sequences in R.
+Biostrings is the 11th most popular package on Bioconductor, with over
+one million installations per year (Fig. 1). 520 packages on
+Bioconductor and 65 packages on CRAN depend on or suggest Biostrings.
+This package is an essential component of the R ecosystem, and has laid
+the groundwork for multitudes of analyses using genomics data over the
+past two decades.</p>
 <p>Despite this success, Biostrings has had limited maintenance for over
 a decade. This dearth of development activity is primarily due to a host
 of higher priority tasks for the package’s main developer. As a result,
@@ -976,8 +981,10 @@ What sort of things could come up that can delay or break the project?
 <p>Much of the technical scaffold for this project is already in place:
 it exists on GitHub, is distributed through a carefully curated package
 manager with regular release times, has an itemized list of tasks, and
-doesn’t require additional tooling or technology to complete.</p>
-<p>The primary mode of failure of this project is tasks taking longer
+doesn’t require additional tooling or technology to complete. The only
+interdependence between Aims is that the testing framework planned for
+Aim 1 will be utilized for the other proposed improvements.</p>
+<p>The primary risk of failure of this project is tasks taking longer
 than expected to complete. For this reason, tasks are arranged in order
 of decreasing importance: Aim 1 is the most critical, followed by Aim 2,
 and finally Aim 3. The highest risk task is Aim 3, Task 3. This project
