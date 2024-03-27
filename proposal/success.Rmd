@@ -58,8 +58,8 @@ What sort of things could come up that can delay or break the project?
 
 -->
 
-Much of the technical scaffold for this project is already in place: it exists on GitHub, is distributed through a carefully curated package manager with regular release times, has an itemized list of tasks, and doesn't require additional tooling or technology to complete. 
+Much of the technical scaffold for this project is already in place: it exists on GitHub, is distributed through a carefully curated package manager with regular release times, has an itemized list of tasks, and doesn't require additional tooling or technology to complete. The only interdependence between Aims is that the testing framework planned for Aim 1 will be utilized for the other proposed improvements.
 
-The primary mode of failure of this project is tasks taking longer than expected to complete. For this reason, tasks are arranged in order of decreasing importance: Aim 1 is the most critical, followed by Aim 2, and finally Aim 3. The highest risk task is Aim 3, Task 3. This project will allow me to subsume the position of maintainer of Biostrings--in the event that some tasks do not complete within the timeframe of the project, I will continue to work on them until they are completed in the post-grant period.
+The primary risk of failure of this project is tasks taking longer than expected to complete. For this reason, tasks are arranged in order of decreasing importance: Aim 1 is the most critical, followed by Aim 2, and finally Aim 3. The highest risk task is Aim 3, Task 3. This project will allow me to subsume the position of maintainer of Biostrings--in the event that some tasks do not complete within the timeframe of the project, I will continue to work on them until they are completed in the post-grant period.
 
 Task progress updates will be posted regularly to the project GitHub. If any tasks are taking longer than expected, this will be reported as soon as possible with updated time estimates and plans to resolve discrepancies.
