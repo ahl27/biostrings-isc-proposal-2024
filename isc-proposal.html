@@ -592,10 +592,14 @@ strs &lt;- DNAStringSet(c(&quot;ATGCATGCA&quot;, &quot;ATGATCATGA&quot;))
 
 # Tells user to use vmatchPDict
 matchPDict(pd, strs)</code></pre>
-<pre><code>## Error in matchPDict(pd, strs): please use vmatchPDict() when &#39;subject&#39; is an XStringSet object (multiple sequence)</code></pre>
+<pre><code>## Error in matchPDict(pd, strs): please use vmatchPDict() when &#39;subject&#39; is
+##  an XStringSet object (multiple sequence)
+</code></pre>
 <pre class="r"><code># ...but vmatchPDict isn&#39;t implemented
 vmatchPDict(pd, strs)</code></pre>
-<pre><code>## Error in .local(pdict, subject, max.mismatch, min.mismatch, with.indels, : vmatchPDict() is not ready yet, sorry</code></pre>
+<pre><code>## Error in .local(pdict, subject, max.mismatch, min.mismatch, with.indels, :
+##  vmatchPDict() is not ready yet, sorry
+</code></pre>
 <p>Nearly all of Biostrings’ high priority TODO items are related to its
 string matching functions. This functionality could be an incredible
 asset to a multitude of bioinformaticians, but is presently hampered by
