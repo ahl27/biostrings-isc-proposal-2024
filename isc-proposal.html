@@ -11,7 +11,7 @@
 
 <meta name="author" content="Aidan Lakshman" />
 
-<meta name="date" content="2024-03-27" />
+<meta name="date" content="2024-03-28" />
 
 <title>Critical Updates to Biostrings</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Critical Updates to Biostrings</h1>
 <h4 class="author">Aidan Lakshman</h4>
-<h4 class="date">2024-03-27</h4>
+<h4 class="date">2024-03-28</h4>
 
 </div>
 
@@ -501,14 +501,13 @@ the elements that are the most important for Biostrings’ long-term
 success. These tasks all deal with incomplete or confusing
 implementations of string matching functions, and I anticipate that they
 can be resolved within five months.</p>
-<p>These three categories are addressed in the three Aims detailed
-below.</p>
+<p>These three Aims are described in more detail below.</p>
 <div id="aim-1-resolving-bugs-and-increasing-robustness" class="section level4">
 <h4>Aim 1: Resolving bugs and increasing robustness</h4>
 <p>The goal of this aim is to prepare the Biostrings codebase for future
 improvements and facilitate ongoing maintenance. Biostrings has had
 minimal maintenance for the past 10 years, and as a result lacks many
-processes that ease continued development. The goals of the Aim are the
+processes that ease continued development. The goals of this Aim are the
 following:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Clean up outdated documentation and bug reports.</strong>
@@ -519,15 +518,15 @@ maintenance challenging, as it requires additional developer effort to
 determine if a bug still exists before addressing it. This task will
 clean up the codebase, update outdated documentation, and clean up
 resolved bug reports.</li>
-<li><strong>Implement unit testing.</strong> Much of this project
-depends on improving and adding additional functionality to Biostrings.
-However, as mentioned in the Problem Definition section, Biostrings is a
-critical package with over a million downloads per year. As such, robust
-unit testing is essential to ensure that other proposed changes do not
-break existing functionality for end users. Robust testing suites would
-also make it easier for maintainers to review community-contributed
-code, thus making it easier to involve the community in future
-Biostrings development.</li>
+<li><strong>Implement unit testing.</strong> Much of this proposal seeks
+to improve and add additional functionality to Biostrings. However, as
+mentioned in the Problem Definition section, Biostrings is a critical
+package with over a million downloads per year. As such, robust unit
+testing is essential to ensure that these proposed changes do not break
+existing functionality for end users. Robust testing suites would also
+make it easier for maintainers to review community-contributed code,
+thus making it easier to involve the community in future Biostrings
+development.</li>
 <li><strong>Resolving outstanding bug reports.</strong> While many bug
 reports on GitHub are resolved, there are many that remain unaddressed.
 This task will resolve any remaining bug reports. Part of this task will
@@ -558,14 +557,19 @@ sequencing technologies easily produce gigabases (&gt;1B nucleotides)
 per run. Hence, Biostrings’ input/output needs improvement to scale
 alongside next generation sequencing technologies. At present,
 Biostrings can only read and write sequences from gzip compressed files.
-There is an <code>open_input_files</code> function that allows reading
-sequences in batches, but it does not use the standard R connections
-interface and is cumbersomely slow on large compressed files.</p>
+Additionally, Biostrings relies on an internal
+<code>open_input_files</code> function to read sequences in batches, but
+this does not use the standard R connections interface and is
+cumbersomely slow on large compressed files. Output is restricted to the
+<code>gzip</code> file format with no control of the the compression
+level. These issues limit the ability of Biostrings to work with modern
+sequencing datafiles.</p>
 <p>To enhance Biostrings, I will add functionality for reading from
-standard gzip, bzip2, and xz connections in R. This will involve
-overhauling the <code>readXStringSet</code> functions within Biostrings.
-Furthermore, I will enable writing to alternative output file
-compression types (bzip2 and xz), while allowing for different
+standard <code>gzip</code>, <code>bzip2</code>, and <code>xz</code>
+connections in R. This will involve overhauling the
+<code>readXStringSet</code> functions within Biostrings. Furthermore, I
+will enable writing to alternative output file compression types
+(<code>bzip2</code> and <code>xz</code>), while allowing for different
 compression levels. While a <code>compression_level</code> argument in
 <code>writeXStringSet</code> does exist, it is unused by the function. I
 will focus on improving the speed of reading and writing from files so
@@ -583,7 +587,7 @@ anticipated to take three months.</p>
 Biostrings does provide a host of tools for string matching, many of
 Biostrings’ tools are underdeveloped and/or confusing to use. For
 example, the following interaction is clearly not ideal:</p>
-<pre class="r"><code>pd &lt;- PDict(mkAllStrings(DNA_BASES, 3))
+<pre class="r"><code>pd &lt;- PDict(&quot;ATG&quot;)
 strs &lt;- DNAStringSet(c(&quot;ATGCATGCA&quot;, &quot;ATGATCATGA&quot;))
 
 # Tells user to use vmatchPDict
@@ -656,14 +660,14 @@ this grant (see “Future Work” for more discussion on these tasks).</p>
 <h1>Project Plan</h1>
 <p>I plan to complete the proposed work in a one-year time period. As
 funding commences June 1, this means the duration of the proposed work
-is June 1, 2024 - June 1, 2025. A summary of the timeline of Aims is
+is June 1, 2024 - May 31, 2025. A summary of the timeline of Aims is
 included below, and a detailed description follows.</p>
 <p>Bioconductor releases new versions in mid-October and mid-April,
 which will each act as large milestones for delivery of this project.
 This grant will conclude shortly before useR! and the annual
 Bioconductor conference (typically held in July), allowing me an
-opportunity to highlight the work done and the ISC program at the end of
-my award.</p>
+opportunity to highlight the work done and the ISC grant program at the
+end of my award.</p>
 <p>A detailed listing of milestones and tasks is available on the <a href="https://github.com/users/ahl27/projects/1">GitHub Project
 Timeline</a>. This project is linked to this proposal’s GitHub
 repository, and will be kept updated throughout this project. All
@@ -716,7 +720,7 @@ improvements.</p>
 <p>Estimated end dates for specific deliverables are available in the
 above Timeline (Fig. 2), and detailed further below. As mentioned
 previously, these are also available in even more detail on the <a href="https://github.com/users/ahl27/projects/1">GitHub Project
-Timeline</a>. Dates are formatted <code>MM/DD/YY</code></p>
+Timeline</a>. Dates are formatted <code>MM/DD/YY</code>.</p>
 <ul>
 <li>06/01/24: Start of the project.</li>
 <li>06/15/24: Biostrings GitHub issue tracker cleaned up. All open
@@ -735,9 +739,8 @@ Complete.</li>
 string matching completed.</li>
 <li>04/15/24: Trusted Bands phased out of <code>matchPDict</code>.
 Biostrings release for Bioconductor v3.21 finalized.</li>
-<li>05/31/25: Vignette for string matching completed. Aim 2
-complete.</li>
-<li>06/01/25: Conclusion of this project.</li>
+<li>05/31/25: Vignette for string matching completed. Aim 3 complete.
+This proposed project concludes.</li>
 <li>07/??/25: Present at BioC2025 and useR! 2025.</li>
 <li>10/01/25: Code finalized in Bioconductor release version 3.22.</li>
 </ul>
@@ -809,7 +812,9 @@ Biostrings. Their primary contribution will take the form of code
 reviews and suggestions for additional improvements.</p>
 <p>I have already met with both Erik Wright and Hervé Pagès to develop
 the structure of this proposal–letters of support are available at the
-top of this proposal.</p>
+top of this proposal. Both Erik Wright and Hervé Pagès agreed that this
+project’s proposed timeline is feasible given their observations of my
+past work.</p>
 </div>
 <div id="processes" class="section level3">
 <h3>Processes</h3>
