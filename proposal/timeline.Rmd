@@ -1,8 +1,8 @@
 # Project Plan
 
-I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposed work is June 1, 2024 - June 1, 2025. A summary of the timeline of Aims is included below, and a detailed description follows.
+I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposed work is June 1, 2024 - May 31, 2025. A summary of the timeline of Aims is included below, and a detailed description follows.
 
-Bioconductor releases new versions in mid-October and mid-April, which will each act as large milestones for delivery of this project. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC program at the end of my award.
+Bioconductor releases new versions in mid-October and mid-April, which will each act as large milestones for delivery of this project. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC grant program at the end of my award.
 
 A detailed listing of milestones and tasks is available on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). This project is linked to this proposal's GitHub repository, and will be kept updated throughout this project. All details are public, so any interested community members can follow its status.
 
@@ -38,7 +38,7 @@ Aim 3: Code-related tasks finished by mid-April 2025, in time for Bioconductor r
 
 The post-grant period will involve presenting on this work at conferences and beginning to address low priority / "nice to have" improvements.
 
-Estimated end dates for specific deliverables are available in the above Timeline (Fig. 2), and detailed further below. As mentioned previously, these are also available in even more detail on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`
+Estimated end dates for specific deliverables are available in the above Timeline (Fig. 2), and detailed further below. As mentioned previously, these are also available in even more detail on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`.
 
 - 06/01/24: Start of the project.
 - 06/15/24: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
@@ -49,8 +49,7 @@ Estimated end dates for specific deliverables are available in the above Timelin
 - 01/31/25: `vmatchPDict` implemented.
 - 02/15/25: Quality of life changes for `PDict` objects and string matching completed.
 - 04/15/24: Trusted Bands phased out of `matchPDict`. Biostrings release for Bioconductor v3.21 finalized.
-- 05/31/25: Vignette for string matching completed. Aim 2 complete.
-- 06/01/25: Conclusion of this project.
+- 05/31/25: Vignette for string matching completed. Aim 3 complete. This proposed project concludes.
 - 07/??/25: Present at BioC2025 and useR! 2025.
 - 10/01/25: Code finalized in Bioconductor release version 3.22.
 
