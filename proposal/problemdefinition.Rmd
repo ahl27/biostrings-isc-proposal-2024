@@ -1,0 +1,36 @@
+# The Problem
+<!-- 
+Outlining the issue / weak point / problem to be solved by this proposal. This should be a compelling section that sets the reader up for the next section - the proposed solution!
+
+It is important to cover:
+
+ - [ ] What the problem is
+ - [ ] Who it affects
+ - [ ] Have there been previous attempts to resolve the problem
+ - [ ] Why it should be tackled
+-->
+R is unquestionably one of the top programming languages for bioinformatics. Nearly every developer or scientist using R for bioinformatics will utilize the Biostrings package, which provides key functionality for efficiently working with genetic sequences in R. Biostrings is the 11th most popular package on Bioconductor, with over one million installations per year (Fig. 1). 520 packages on Bioconductor and 65 packages on CRAN depend on or suggest Biostrings. This package is an essential component of the R ecosystem, and has laid the groundwork for multitudes of analyses using genomics data over the past two decades.
+
+Despite this success, Biostrings has had limited maintenance for over a decade. This dearth of development activity is primarily due to a host of higher priority tasks for the package's main developer. As a result, the majority of changes in recent years have been small contributions from community members. This patchwork development effort has resulted in the accumulation of technical debt, longstanding bugs, and insufficient support to implement planned enhancements. While many of these issues have been outlined within the Biostrings package, there have been few developers willing to learn the internal code structure of Biostrings to be able to take over maintenance. This backlog of issues has also resulted in insufficient testing suites, limiting community involvement by making it more challenging to review potential contributions.
+
+As an active Biostrings user and contributor, I have discussed these issues extensively with the current package maintainer, Hervé Pagès (see attached Letter of Support). In collaboration, we have drawn a roadmap to sustainable long-term maintenance of the Biostrings package. Here, we present a path forward and request funding support for the labor required to implement it. In this vision, I will take over primary maintenance of the Biostrings package and implement a set of fixes and extensions that put Biostrings on a path toward sustained success.
+
+```{r, echo=FALSE, fig.fullwidth=TRUE, fig.align='center', fig.cap="Yearly Biostrings Installations by total and unique IP address."}
+par(mgp=c(2.5,0.5,0))
+d <- read.table("../data/Biostrings_Downloads_v1.csv", sep=',', row.names=1L, header=TRUE)
+plot(NULL, main="Annual Biostrings Installations", yaxs='i', xaxs='i',
+     xaxt='n', yaxt='n', xlab="Year", ylab='Number of Installations (Millions)',
+     xlim=c(min(d$Year)-0.5, max(d$Year)+0.5), ylim=c(0, 1.5e6))
+for(i in seq(5,15,5)){
+  abline(h=i*1e5, col='grey80')
+}
+lines(x=d$Year, y=d$Total, col='orange')
+lines(x=d$Year, y=d$Distinct.IP, col='skyblue')
+points(x=d$Year, y=d$Total, col='orange', pch=19)
+points(x=d$Year, y=d$Distinct.IP, col='skyblue', pch=19)
+axis(side=1, at=d$Year, labels=TRUE)
+axis(side=2, at=seq(0,15,5)*1e5, 
+     labels=c("0.0", "0.5", "1.0", "1.5"), las=2, hadj=1.25)
+legend(x=min(d$Year)-0.25, y=1.45e6, 
+       legend=c("Distinct IPs", "Total"), lwd=1, pch=19, col=c("skyblue", "orange"))
+```

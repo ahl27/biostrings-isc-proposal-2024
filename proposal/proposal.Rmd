@@ -1,0 +1,97 @@
+# The Proposal
+<!--
+This is where the proposal should be outlined. 
+-->
+
+### Overview
+<!--
+At a high-level address what your proposal is and how it will address the problem identified. Highlight any benefits to the R Community that follow from solving the problem. This should be your most compelling section.
+-->
+
+Biostrings is a core Bioconductor package providing efficient containers for storing, manipulating, and analyzing biological sequences. Biostrings is **the** method to access biological sequence data in R; nearly every analysis working with genomic data depends on the Biostrings package to handle sequencing data. Presently, Biostrings maintenance is hindered by (i) lack of robust testing and numerous open bug reports, (ii) input/output that is becoming outdated with newer technology, and (iii) incomplete implementations of critical functionality.
+
+This project proposes to clear out this accumulated technical debt by addressing open issues, implementing robust tests for long-term sustainability, improving user experience, and adding features that will keep Biostrings relevant for modern sequencing technologies. For end-users, this will result in numerous bugfixes, a host of new features to support genomic analyses, and a variety of performance improvements to bolster R as one of the top programming languages for bioinformatics. For developers, this will make the Biostrings package more sustainable, allowing for more community contribution and faster bug resolution in the future.
+
+In summary, this proposal details a new era for Biostrings. The project will transition maintenance to a new developer, and in the process, ensure the package is robust and maintainable for years to come.
+
+### Detail
+<!--
+Go into more detail about the specifics of the project and it delivers against the problem.
+
+Depending on project type the detail section should include:
+
+ - [ ] Minimum Viable Product
+ - [ ] Architecture
+ - [ ] Assumptions
+-->
+
+There are three categories of changes needed to sustain the utility of Biostrings in the long-term. First, Biostrings needs a better testing infrastructure to support future improvements. Implementing this testing framework will go hand-in-hand with addressing existing bug reports, most of which are straightforward but require effort to complete. I anticipate up to four months for this first Aim. 
+
+Second, modern DNA sequencing technologies have advanced markedly since Biostrings was first introduced, and Biostrings struggles to handle this deluge of data. Improvements to import and export of sequences are needed to sustain the package long-term. I expect these changes will take three months. 
+
+Finally, the Biostrings package contains [a list of to-do items](https://github.com/Bioconductor/Biostrings/blob/d13154e5013363a568d983ff26e483e6c77fb007/TODO) that have gone unaddressed for years due to insufficient developer time. Prior to this proposal's submission, I worked with Hervé Pagès to remove outdated items and narrow this list to the elements that are the most important for Biostrings' long-term success. These tasks all deal with incomplete or confusing implementations of string matching functions, and I anticipate that they can be resolved within five months.
+
+These three Aims are described in more detail below.
+
+#### Aim 1: Resolving bugs and increasing robustness
+
+The goal of this aim is to prepare the Biostrings codebase for future improvements and facilitate ongoing maintenance. Biostrings has had minimal maintenance for the past 10 years, and as a result lacks many processes that ease continued development. The goals of this Aim are the following:
+
+1. **Clean up outdated documentation and bug reports.** Many internal documentation files and scripts have `TODO` tags or warnings that are out of date. Additionally, many bug reports on GitHub have been resolved but remain open. This makes ongoing maintenance challenging, as it requires additional developer effort to determine if a bug still exists before addressing it. This task will clean up the codebase, update outdated documentation, and clean up resolved bug reports.
+2. **Implement unit testing.** Much of this proposal seeks to improve and add additional functionality to Biostrings. However, as mentioned in the Problem Definition section, Biostrings is a critical package with over a million downloads per year. As such, robust unit testing is essential to ensure that these proposed changes do not break existing functionality for end users. Robust testing suites would also make it easier for maintainers to review community-contributed code, thus making it easier to involve the community in future Biostrings development.
+3. **Resolving outstanding bug reports.** While many bug reports on GitHub are resolved, there are many that remain unaddressed. This task will resolve any remaining bug reports. Part of this task will involve reaching out to bug reporters for additional detail, as some bug reports are years old without any updates (see issues [#25](https://github.com/Bioconductor/Biostrings/issues/25) or [#51](https://github.com/Bioconductor/Biostrings/issues/51) for examples of very old bug reports). This task will also resolve a handful of small high-priority tasks on the Biostrings TODO list, since some existing bug reports overlap with TODO items.
+
+Successful completion of this Aim will result in a cleaner Biostrings GitHub repository, resolution of outstanding user-submitted bugs, and a robust testing pipeline for future submissions. I expect this Aim to take four months; most of the GitHub issues are relatively quick to fix, so the majority of the time will be dedicated to building a robust testing infrastructure.
+
+Aim 1 is scheduled to be addressed first because it includes checks for later work and fixes for user-identified issues. I see these improvements as the highest priority for the Biostrings codebase as a whole.
+
+#### Aim 2: Enhancing input/output for modern sequencing technologies
+
+Biostrings was initially developed during a time when sequencing produced megabases (~1M nucleotides) of data per run. However, modern sequencing technologies easily produce gigabases (>1B nucleotides) per run. Hence, Biostrings' input/output needs improvement to scale alongside next generation sequencing technologies. At present, Biostrings can only read and write sequences from gzip compressed files. Additionally, Biostrings relies on an internal `open_input_files` function to read sequences in batches, but this does not use the standard R connections interface and is cumbersomely slow on large compressed files. Output is restricted to the `gzip` file format with no control of the the compression level. These issues limit the ability of Biostrings to work with modern sequencing datafiles.
+
+To enhance Biostrings, I will add functionality for reading from standard `gzip`, `bzip2`, and `xz` connections in R. This will involve overhauling the `readXStringSet` functions within Biostrings. Furthermore, I will enable writing to alternative output file compression types (`bzip2` and `xz`), while allowing for different compression levels. While a `compression_level` argument in `writeXStringSet` does exist, it is unused by the function. I will focus on improving the speed of reading and writing from files so that large file sizes are no longer problematically slow. Collectively, these enhancements will propel Biostrings (and by extension, the R programming language itself) into the future of big biological data.
+
+This Aim is placed second due it being of high immediate impact to end users. These changes will be larger than those of Aim 1, and thus implementing it after testing suites is preferable. This Aim is anticipated to take three months.
+
+#### Aim 3: Fixing String Matching
+
+Matching strings is a common task in bioinformatics, and, while Biostrings does provide a host of tools for string matching, many of Biostrings' tools are underdeveloped and/or confusing to use. For example, the following interaction is clearly not ideal:
+
+```{r, echo=FALSE}
+error_hook <- knitr::knit_hooks$get("error")
+knitr::knit_hooks$set(error = function(x, options) {
+ linewidth <- 77L
+ #x <- knitr:::split_lines(x)
+ nc <- nchar(x)
+ .ranges <- seq(1, nc, by=linewidth)
+ x <- substring(x, .ranges, c(.ranges[-1], nc+1)-1)
+ x <- paste(trimws(x), collapse='\n##\t')
+ x <- paste0(x, '\n\n')
+ error_hook(x, options)
+})
+```
+
+```{r, echo=TRUE, error=TRUE}
+pd <- PDict("ATG")
+strs <- DNAStringSet(c("ATGCATGCA", "ATGATCATGA"))
+
+# Tells user to use vmatchPDict
+matchPDict(pd, strs)
+# ...but vmatchPDict isn't implemented
+vmatchPDict(pd, strs)
+```
+
+Nearly all of Biostrings' high priority TODO items are related to its string matching functions. This functionality could be an incredible asset to a multitude of bioinformaticians, but is presently hampered by a confusing user experience.
+
+This Aim will resolve these issues by implementing expected capabilities, streamlining the user experience, and adding additional tutorials and documentation. More specifically, this will address the following tasks:
+
+1. **Resolve the circular error of `matchPDict` and `vmatchPDict` shown previously.** This involves implementing `vmatchPDict` and removing these error messages.
+2. **Implement small helper functions for `PDict` objects to improve user experience.** Specifically, implement `reverseComplement`, `duplicated`, and `patternFrequency` for `PDict` objects, and add the `skip.invalid.patterns` argument for `PDict` that has been promised in documentation for years. This will also add in helper functions to clarify available algorithms for `matchPDict`, which are currently relatively hard to understand.
+3. **Streamline `matchPDict`.** The current implementation of inexact string matching relies strongly on a fixed-width region called a "Trusted Band". This implementation is very difficult to understand for end-users, leading to confusion on how to use it and seemingly cryptic error messages. As outlined in the TODO file, Trusted Bands could be refactored into a purely internal argument, removing a significant amount of user burden by greatly streamlining user-exposed arguments and documentation. This would also allow users to search for variable width patterns in data, which is a common task.
+4. **Develop a comprehensive vignette for string matching**: Biostrings' string matching functions are powerful but underutilized by the community. Once the previous tasks are completed, I will write an in-depth vignette to showcase using Biostrings' string matching functions for common tasks in bioinformatics to help users learn to use the full extent of these new implementations. These tutorials will be further showcased at future conference presentations (notably BioC2025, see "Timeline: Other Aspects"). This task may also include updating any other vignettes that require revision following the other work in this proposal.
+
+The first two tasks are smaller than the latter two, providing a ramp-up period to learn the intricacies of the internal string matching libraries.
+
+Aim 3 is the longest aim, and is anticipated to take five months. While many of these tasks are nontrivial, much of the initial plans to implement them are detailed in the Biostrings TODO file. These tasks also build off of existing functionality (e.g., `vmatchPDict` for Task 1 will primarily leverage the existing code in `matchPDict`). The longest task in this Aim is the final one--extra time will be devoted to developing the vignette to ensure it is high quality and useful to users.
+
+The remaining tasks in the TODO file are marked as either "nice to have" or low-priority. These will be addressed after the conclusion of this grant (see "Future Work" for more discussion on these tasks).

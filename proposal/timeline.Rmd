@@ -1,0 +1,71 @@
+# Project Plan
+
+I plan to complete the proposed work in a one-year time period. As funding commences June 1, this means the duration of the proposed work is June 1, 2024 - May 31, 2025. A summary of the timeline of Aims is included below, and a detailed description follows.
+
+Bioconductor releases new versions in mid-October and mid-April, which will each act as large milestones for delivery of this project. This grant will conclude shortly before useR! and the annual Bioconductor conference (typically held in July), allowing me an opportunity to highlight the work done and the ISC grant program at the end of my award.
+
+A detailed listing of milestones and tasks is available on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). This project is linked to this proposal's GitHub repository, and will be kept updated throughout this project. All details are public, so any interested community members can follow its status.
+
+![Timeline of aims and tasks throughout the project. Bioconductor v3.20 releases in mid-October, and v3.21 in mid-April. Aim 1 will be released with v3.20, and everything else except the string matching vignette will be released with v3.21.](data/Timeline.png)
+
+### Start-Up Phase
+<!--
+Covering the planning phase, this section should provide a relatively detailed plan of how work will start on the project. This section is important because projects need to get up and running quickly.
+
+
+ - [ ] Setting up collaboration platform inc. code for contributors etc.
+ - [ ] Licence decisions
+ - [ ] Reporting framework
+-->
+
+This project has a short start-up phase. I have already coordinated with Hervé Pagès to identify critical tasks for each of the Aims (see "Proposal"). The codebase and dissemination method have already been created (GitHub and Bioconductor, respectively), and I have acquired write access to the codebase from Hervé Pagès. Additionally, I have experience contributing to Biostrings in the past, so I am relatively familiar with the codebase and contribution pipeline. As a result, I would be ready to begin work on Aim 1 from the moment the grant is awarded.
+
+
+### Technical Delivery
+<!--
+Covering the actual delivery of the project this section should provide at least a high-level the implementation. 
+
+Including target dates is really important as you need to be committed and the ISC need to have a means of tracking delivery
+-->
+
+Aims will be completed on the following schedule:
+
+Aim 1: Finished by October 1, 2024, in time for Bioconductor release 3.20. (four months)
+
+Aim 2: Finished by January 1, 2025. (three months)
+
+Aim 3: Code-related tasks finished by mid-April 2025, in time for Bioconductor release 3.21. Vignette finished by June 1, 2025. (five months)
+
+The post-grant period will involve presenting on this work at conferences and beginning to address low priority / "nice to have" improvements.
+
+Estimated end dates for specific deliverables are available in the above Timeline (Fig. 2), and detailed further below. As mentioned previously, these are also available in even more detail on the [GitHub Project Timeline](https://github.com/users/ahl27/projects/1). Dates are formatted `MM/DD/YY`.
+
+- 06/01/24: Start of the project.
+- 06/15/24: Biostrings GitHub issue tracker cleaned up. All open issues will be verified unresolved bugs.
+- 08/15/24: Testing framework for Biostrings implemented, test suites included in `tests` folder in codebase.
+- 09/30/24: Open bugs from Biostrings GitHub resolved. Aim 1 complete; Biostrings release for Bioconductor v3.20 finalized.
+- 11/15/25: Optimized `readXStringSet` function completed.
+- 12/31/25: Support for compression levels and other compression formats for `writeXStringSet` implemented. Aim 2 Complete.
+- 01/31/25: `vmatchPDict` implemented.
+- 02/15/25: Quality of life changes for `PDict` objects and string matching completed.
+- 04/15/24: Trusted Bands phased out of `matchPDict`. Biostrings release for Bioconductor v3.21 finalized.
+- 05/31/25: Vignette for string matching completed. Aim 3 complete. This proposed project concludes.
+- 07/??/25: Present at BioC2025 and useR! 2025.
+- 10/01/25: Code finalized in Bioconductor release version 3.22.
+
+### Other Aspects
+<!--
+Covering non-technical activities like on-going publicity, paper preparation, discussion groups etc. that might be required to facilitate successful delivery of the project.
+
+ - [ ] Announcement post
+ - [ ] Delivery blog post
+ - [ ] Twitter
+ - [ ] UseR!
+ - [ ] ISC meetings
+-->
+
+This project will be highlighted through a variety of methods.
+
+Changes made will be released via Bioconductor's semiannual version releases. I will accompany these updates with social media outreach and blog posts to [my website](https://www.ahl27.com/blog/) (pending approval to be cross-listed at R-bloggers.com). Regular progress updates will be disseminated via the GitHub project page for this proposal.
+
+As mentioned previously, this proposal will conclude in June 2025, shortly before the annual useR! and Bioconductor conferences. The code-related aspects of this project will be finished by mid-April, in time for the application cycles of these conferences. I will apply to present the work done in this proposal at both BioC2025 and useR! 2025; BioC2025 will highlight the improved string matching functionality, and useR! will focus on the overall ISC-funded project. Both will encourage community involvement in the new Biostrings.

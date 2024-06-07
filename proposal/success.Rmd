@@ -1,0 +1,65 @@
+# Success
+<!-- 
+Projects should have a definition of done that is measurable, and a thorough understanding going in of what the risks are to delivery 
+-->
+The overall goals of this project are to clean up the backlog of TODOs, make Biostrings easier to maintain, and transition future maintenance to a new owner. Success is thus not just in terms of short term contributions to the package, but also how the burden of maintenance is decreased for future developers.
+
+### Definition of Done
+<!-- 
+What does success look like? 
+-->
+A successful outcome for this project is the following:
+
+1. Biostrings is easily maintainable using automated testing suites.
+2. All user-submitted bugs from prior to June 2024 are resolved.
+3. Biostrings has the capability to handle big biological data.
+4. Biostrings has a robust and easy-to-use string matching library.
+
+Outcomes 1 and 2 result from Aim 1, Outcome 3 results from Aim 2, and Outcome 4 results from Aim 3.
+
+Of these, Outcome 1 is arguably the most important. Biostrings is a critical package in the R ecosystem, and will undoubtedly persist for years to come. As a result, it is essential that the codebase is made as maintainable as possible, both for myself and for future maintainers. Code that is easier to maintain is easier to contribute to, and thus lowers the barrier to entry for community members to be involved with Biostrings.
+
+Outcomes 2-4 will greatly improve user experience and improve the ability of R to handle larger and larger analyses. Given the deluge of biological data in the modern era, these improvements are paramount for the continued success of R for bioinformatics. 
+
+### Measuring Success
+<!-- 
+How will we know when success is achieved, what markers can we use along the way 
+-->
+
+Success will be measured through well-defined milestones. Many of the specific deliverables are mentioned in the "Technical Delivery" section. 
+
+Each Aim is composed of a set of discrete tasks. We can thus measure progress by how many tasks have been completed. Biostrings is distributed through Bioconductor, which has two version releases per year. These line up perfectly with the planned timeline of this proposal. The conclusion of Aim 1 is measurable by an empty issue tracker on GitHub, and will be completed for Bioconductor's version 3.20 release in October 2024. Aim 2 is measurable by updated implementations of the read/write functions for strings, and Aim 3 is measurable by how many tasks in the TODO file have been completed. Aim 2 and most of Aim 3 will be completed for Bioconductor's version 3.21 release in April 2025, and the remaining time will be spent on developing a high quality vignette for all new functionality added. 
+
+To keep track of the tasks for each Aim, I have created a project tracker available on this [proposal's GitHub](https://github.com/ahl27/biostrings-isc-proposal-2024/projects). This will be regularly updated with the project, allowing anyone interested in the project to follow its status. Regular status updates will be posted here as well during the course of the project.
+
+### Future Work
+<!-- 
+How could this be extended / developed in the future by yourself and/or the community in general?
+-->
+
+I plan to continue maintenance of this package into the future. This funding will provide support for me to gain an intricate knowledge of the codebase and create a testing infrastructure, allowing future maintenance to be much faster and less of a development burden.
+
+Future work falls into three categories:
+
+1. **Continued Maintenance.** This is the expected burden of maintaining the package: dealing with bug reports, responding to users on GitHub and Bioconductor, and keeping the package updated for each subsequent Bioconductor and R version release.
+2. **Feature enhancements.** This includes adding additional enhancements or features, including the various "nice to have" optimizations detailed in the Biostrings TODO file. An illustrative example of this is adding an internal `NucleotideString` virtual class to simplify the codebase. Many internal functions make checks like `if(is(x, "DNAString") || is(x, "RNAString"))`, which could be simplified to just `if(is(x, "NucleotideString"))`. Generic functions that act identically on `DNAString` and `RNAString` objects could just call a `NucleotideString` object instead. This would also simplify later unit testing. Enhancements like these are reserved for future work since they have little impact on end-users and are not high priority.
+3. **Increasing community involvement.** Once the initial work of cleaning up the package and implementing solid testing is done, allowing and encouraging contribution will be much easier. A focus of the planned conference talks at useR! and BioC2025 will be trying to get more community members involved in contributing code to Biostrings. 
+
+There is a chance that this development proceeds faster than planned. In this case, any remaining time will be dedicated to beginning work on the "future enhancements" detailed here.
+
+### Key Risks
+<!-- 
+What sort of things could come up that can delay or break the project?
+
+ - [ ] People
+ - [ ] Processes
+ - [ ] Tooling & Technology
+ - [ ] Costs
+
+-->
+
+Much of the technical scaffold for this project is already in place: it exists on GitHub, is distributed through a carefully curated package manager with regular release times, has an itemized list of tasks, and doesn't require additional tooling or technology to complete. The only interdependence between Aims is that the testing framework planned for Aim 1 will be utilized for the other proposed improvements.
+
+The primary risk of failure of this project is tasks taking longer than expected to complete. For this reason, tasks are arranged in order of decreasing importance: Aim 1 is the most critical, followed by Aim 2, and finally Aim 3. The highest risk task is Aim 3, Task 3. This project will allow me to subsume the position of maintainer of Biostrings--in the event that some tasks do not complete within the timeframe of the project, I will continue to work on them until they are completed in the post-grant period.
+
+Task progress updates will be posted regularly to the project GitHub. If any tasks are taking longer than expected, this will be reported as soon as possible with updated time estimates and plans to resolve discrepancies.
